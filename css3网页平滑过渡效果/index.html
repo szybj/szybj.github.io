@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 告诉低版本IE使用最新的渲染模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+     <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>css3网页的平滑过渡</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin+Slab:400,700">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="wrap">
+    <div class="container">
+    <!-- 导航开始 -->
+        <input type="radio" name='radio-set' checked='checked' id='nav1'>
+        <a href="#box-1">标题1</a>
+        <input type="radio" name='radio-set' id='nav2'>
+        <a href="#box-2">标题2</a>
+        <input type="radio" name='radio-set' id='nav3'>
+        <a href="#box-3">标题3</a>
+        <input type="radio" name='radio-set' id='nav4'>
+        <a href="#box-4">标题4</a>
+        <input type="radio" name='radio-set' id='nav5'>
+        <a href="#box-5">标题5</a>
+        <!-- 导航结束-->
+        <!-- 内容开始 -->
+        <div class="content">
+            <div class='box' id='box-1'>
+                <div class="desc" data-icon='H'></div>
+                <h2>标题1</h2>
+                <p>描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</p>
+            </div>
+
+             <div class='box bg-color' id='box-2'>
+                <div class="desc" data-icon='2'></div>
+                <h2>标题2</h2>
+                <p>描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</p>
+            </div>
+
+            <div class='box' id='box-3'>
+                <div class="desc" data-icon='B'></div>
+                <h2>标题3</h2>
+                <p>描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</p>
+            </div>
+
+            <div class='box bg-color' id='box-4'>
+                <div class="desc" data-icon='x'></div>
+                <h2>标题4</h2>
+                <p>描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</p>
+            </div>
+
+            <div class='box' id='box-5'>
+                <div class="desc" data-icon='5'></div>
+                <h2>标题5</h2>
+                <p>描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</p>
+            </div>
+
+      <!-- 内容结束 -->
+        </div>
+     </div>
+</div>
+</body>
+</html>

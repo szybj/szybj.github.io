@@ -1,0 +1,579 @@
+/*
+* @Author: szy
+* @Date:   2016-12-24 23:17:33
+* @Last Modified by:   szy
+* @Last Modified time: 2016-12-24 23:17:52
+*/
+ html,body,.container,.wrap{
+    width:100%;
+    height:100%
+}
+body{
+    font-family: Arial;
+    background: #ddd;
+    font-weight: 400;
+    font-size: 16px;
+    color: #333;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    /**
+     * css3中用于设置字体的抗锯齿属性
+     * 语法:
+     * font-smoothing:subpixel-antialiased | none | antialiased
+     * 取值说明：
+     *  none用于小像素的文本、subpixel-antialiased浏览器默认的、antialiased反锯齿
+     */
+}
+a{
+    text-decoration: none;
+    color:#666;
+}
+.clearfix:after{
+    content: '';
+    clear:both;
+    display:block;
+    height:0;
+    width:0;
+    font-size: 0;
+    visibility: hidden;//与display:none是有区别的，visibility仍然占据空间，只是看不见而已
+
+}
+.clearfix{
+    zoom: 1;
+}
+//导航条外框
+.container{
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    position: absolute;
+    left:0;
+    top:0;
+    font-family: "Josefin Slab","Myriad Pro",Arial,sana-serif;
+}
+.container a,.container input{
+    width:20%;
+    height:34px;
+    line-height: 34px;
+    position: fixed;
+    float: left;
+    bottom: 0;
+}
+.container input{
+    opacity: 0;
+    z-index: 500;
+    cursor: pointer;
+}
+
+.container a{
+    z-index: 10;
+    font-weight: 700;
+    font-size: 18px;
+    background: #e23a6e;
+    text-align: center;
+    color:#fff;
+    cursor: pointer;
+
+}
+#nav1, #nav1 + a {
+    left:0%;
+}
+#nav2, #nav2 + a {
+    left:20%;
+}
+#nav3, #nav3 + a {
+    left:40%;
+}
+#nav4, #nav4 + a {
+    left:60%;
+}
+#nav5, #nav5 + a {
+    left:80%;
+}
+
+.container input:checked + a {
+    background: #821134;
+}
+
+/*选中的三角*/
+.container input:checked + a:after{
+    content: '';
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;/* 阻止默认事件 */
+    border:20px solid transparent;/* 背景透明的 */
+    border-bottom-color: #821134;
+    position: absolute;
+    bottom: 100%;
+    left:50%;
+    margin-left:-20px;
+
+}
+/*鼠标滑过改变背景颜色*/
+.container input:hover:not(:checked) + a{
+    background:#ad244f;
+}
+
+/**
+ * 内容
+ */
+.content,.box{
+    width:100%;
+    height: 100%;
+    position: relative;
+}
+
+.content,.box{
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    position: relative;
+}
+.box{
+    background: #fff;
+    overflow: hidden;
+}
+.content{
+    left:0;
+    top:0;
+    transform:translate3D(0,0,0);/*可开启GPU硬件加速*/
+    -webkit-transform:translate3D(0,0,0);
+    -moz-transform:translate3D(0,0,0);
+    -o-transform:translate3D(0,0,0);
+    -ms-transform:translate3D(0,0,0);
+    backface-visibility:hidden;/*当元素不面向屏幕时是否可见 visible | hidden*/
+    -webkit-backface-visibility:hidden;
+    transition:all 0.5s ease-in-out;
+    -webkit-transform:all 0.5s ease-in-out;
+    -moz-transform:all 0.5s ease-in-out;
+    -o-transform:all 0.5s ease-in-out;
+    -ms-transform:all 0.5s ease-in-out;
+
+}
+#nav1:checked ~ .content{
+    transform:translateY(0%);
+    -webkit-transform:translateY(0%);
+    -moz-transform:translateY(0%);
+    -o-transform:translateY(0%);
+    -ms-transform:translateY(0%);
+}
+#nav2:checked ~ .content{
+    transform:translateY(-100%);
+    -webkit-transform:translateY(-100%);
+    -moz-transform:translateY(-100%);
+    -o-transform:translateY(-100%);
+    -ms-transform:translateY(-100%);
+}
+
+#nav3:checked ~ .content{
+    transform:translateY(-200%);
+    -webkit-transform:translateY(-200%);
+    -moz-transform:translateY(-200%);
+    -o-transform:translateY(-200%);
+    -ms-transform:translateY(-200%);
+}
+
+#nav4:checked ~ .content{
+    transform:translateY(-300%);
+    -webkit-transform:translateY(-300%);
+    -moz-transform:translateY(-300%);
+    -o-transform:translateY(-300%);
+    -ms-transform:translateY(-300%);
+}
+#nav5:checked ~ .content{
+    transform:translateY(-400%);
+    -webkit-transform:translateY(-400%);
+    -moz-transform:translateY(-400%);
+    -o-transform:translateY(-400%);
+    -ms-transform:translateY(-400%);
+}
+
+/*绘制顶部三角形*/
+.desc{
+    width:200px;
+    height:200px;
+    background: #fa96b5;
+    position: absolute;
+    left:50%;
+    margin-left:-100px;
+    transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    -moz-transform: translateY(-50%) rotate(45deg);
+    -o-transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+}
+
+/* 自定义字体，小图标的显示 */
+[data-icon]:after{
+    content:attr(data-icon);
+    width:200px;
+    height:200px;
+    color:#fff;
+    font-size: 90px;
+    text-align: center;
+    line-height: 200px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin:-100px 0 0 -100px;
+    transform:rotate(-45deg) translateY(25%);
+    font-family: 'raphaelicons';
+}
+
+@font-face{
+    font-family: 'raphaelicons';
+    src:url('fonts/raphaelicons-webfont.eot') format('eot'),
+        url('fonts/raphaelicons-webfont.ttf') format('truetype'),
+        url('fonts/raphaelicons-webfont.svg') format('svg'),
+        url('fonts/raphaelicons-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.box h2{
+    color:#e23a6e;
+    font-size: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: 900;
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    margin-top:-70px;
+    transition:all 0.6s cubic-bezier(0.1,0.45,0.25,0.6);
+    text-shadow: 1px 1px 1px rgba(151,24,64,0.5);
+    -webkie-backface-visibility:hidden;
+    backface-visibility:hidden;
+}
+.box p{
+    width:50%;
+    left:25%;
+    top:50%;
+    position: absolute;
+    margin-top:10px;
+    font-size: 16px;
+    line-height: 22px;
+    padding:0;
+    transition:all 0.6s linear;
+    text-align: center;
+    color:#8b8b8b;
+    -webkit-backface-visibility:hidden;
+}
+#nav1:checked ~ .content #box-1 h2,
+#nav3:checked ~ .content #box-3 h2,
+#nav5:checked ~ .content #box-5 h2{
+animation:moveDownH 0.6s ease-in-out 0.4s backwards;
+-moz-animation:moveDownH 0.6s ease-in-out 0.4s backwards;
+-o-animation:moveDownH 0.6s ease-in-out 0.4s backwards;
+-ms-animation:moveDownH 0.6s ease-in-out 0.4s backwards;
+-webkit-animation:moveDownH 0.6s ease-in-out 0.4s backwards;
+}
+#nav1:checked ~ .content #box-1 p,
+#nav5:checked ~ .content #box-5 p{
+animation:moveUpP 0.6s ease-in-out 0.4s backwards;
+-moz-animation:moveUpP 0.6s ease-in-out 0.4s backwards;
+-o-animation:moveUpP 0.6s ease-in-out 0.4s backwards;
+-ms-animation:moveUpP 0.6s ease-in-out 0.4s backwards;
+-webkit-animation:moveUpP 0.6s ease-in-out 0.4s backwards;
+}
+#nav3:checked ~ .content #box-3 p{
+animation:moveUpP1 0.6s ease-in-out 0.4s backwards;
+-moz-animation:moveUpP1 0.6s ease-in-out 0.4s backwards;
+-o-animation:moveUpP1 0.6s ease-in-out 0.4s backwards;
+-ms-animation:moveUpP1 0.6s ease-in-out 0.4s backwards;
+-webkit-animation:moveUpP1 0.6s ease-in-out 0.4s backwards;
+}
+#nav2:checked ~ .content #box-2 h2,
+#nav4:checked ~ .content #box-4 h2{
+animation:moveLeftH 0.6s ease-in-out 0.4s backwards;
+-moz-animation:moveLeftH 0.6s ease-in-out 0.4s backwards;
+-o-animation:moveLeftH 0.6s ease-in-out 0.4s backwards;
+-ms-animation:moveLeftH 0.6s ease-in-out 0.4s backwards;
+-webkit-animation:moveLeftH 0.6s ease-in-out 0.4s backwards;
+}
+#nav2:checked ~ .content #box-2 p,
+#nav4:checked ~ .content #box-4 p{
+animation:moveRightP 0.6s ease-in-out 0.4s backwards;
+-moz-animation:moveRightP 0.6s ease-in-out 0.4s backwards;
+-o-animation:moveRightP 0.6s ease-in-out 0.4s backwards;
+-ms-animation:moveRightP 0.6s ease-in-out 0.4s backwards;
+-webkit-animation:moveRightP 0.6s ease-in-out 0.4s backwards;
+}
+/*{}
+#nav4:checked ~ .contnet #box-4 h2{}
+ */
+@-webkit-keyframes moveDownH{
+    0%{
+        transform: translateY(-60px);
+        -webkit-transform: translateY(-60px);
+        -moz-transform: translateY(-60px);
+        -o-transform: translateY(-60px);
+        -ms-transform: translateY(-60px);
+        opacity: 0;
+
+    }
+    25%{
+        transform: translateY(50px);
+        -webkit-transform: translateY(50px);
+        -moz-transform: translateY(50px);
+        -o-transform: translateY(50px);
+        -ms-transform: translateY(50px);
+        opacity: 0.25;
+    }
+    50%{
+        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        -moz-transform: translateY(-20px);
+        -o-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        opacity: 0.5;
+    }
+    75%{
+        transform: translateY(10px);
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        -o-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        opacity: 0.75;
+    }
+    100%{
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -o-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+/*p匀速*/
+@-webkit-keyframes moveUpP{
+    0%{
+        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+        -moz-transform: translateY(30px);
+        -o-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        opacity: 0;
+
+    }
+  /* 25%{
+      transform: translateY(-20px);
+      -webkit-transform: translateY(-20px);
+      -moz-transform: translateY(-20px);
+      -o-transform: translateY(-20px);
+      -ms-transform: translateY(-20px);
+      opacity: 0.25;
+  }
+  50%{
+      transform: translateY(10px);
+      -webkit-transform: translateY(10px);
+      -moz-transform: translateY(10px);
+      -o-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+      opacity: 0.5;
+  }
+  75%{
+      transform: translateY(-10px);
+      -webkit-transform: translateY(-10px);
+      -moz-transform: translateY(-10px);
+      -o-transform: translateY(-10px);
+      -ms-transform: translateY(-10px);
+      opacity: 0.75;
+  } */
+    100%{
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -o-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+/*p抖动*/
+@-webkit-keyframes moveUpP1{
+    0%{
+        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+        -moz-transform: translateY(30px);
+        -o-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        opacity: 0;
+
+    }
+25%{
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    opacity: 0.25;
+}
+50%{
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    opacity: 0.5;
+}
+75%{
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    opacity: 0.75;
+}
+    100%{
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -o-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes moveLeftH{
+    0%{
+        transform: translateX(-460px);
+        -webkit-transform: translateX(-460px);
+        -moz-transform: translateX(-460px);
+        -o-transform: translateX(-460px);
+        -ms-transform: translateX(-460px);
+        opacity: 0;
+
+    }
+    25%{
+        transform: translateX(50px);
+        -webkit-transform: translateX(50px);
+        -moz-transform: translateX(50px);
+        -o-transform: translateX(50px);
+        -ms-transform: translateX(50px);
+        opacity: 0.25;
+    }
+    50%{
+        transform: translateX(-20px);
+        -webkit-transform: translateX(-20px);
+        -moz-transform: translateX(-20px);
+        -o-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+        opacity: 0.5;
+    }
+    75%{
+        transform: translateX(10px);
+        -webkit-transform: translateX(10px);
+        -moz-transform: translateX(10px);
+        -o-transform: translateX(10px);
+        -ms-transform: translateX(10px);
+        opacity: 0.75;
+    }
+    100%{
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes moveRightP{
+    0%{
+        transform: translateX(460px);
+        -webkit-transform: translateX(460px);
+        -moz-transform: translateX(460px);
+        -o-transform: translateX(460px);
+        -ms-transform: translateX(460px);
+        opacity: 0;
+
+    }
+    25%{
+        transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        -moz-transform: translateX(-50px);
+        -o-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+        opacity: 0.25;
+    }
+    50%{
+        transform: translateX(20px);
+        -webkit-transform: translateX(20px);
+        -moz-transform: translateX(20px);
+        -o-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        opacity: 0.5;
+    }
+    75%{
+        transform: translateX(-10px);
+        -webkit-transform: translateX(-10px);
+        -moz-transform: translateX(-10px);
+        -o-transform: translateX(-10px);
+        -ms-transform: translateX(-10px);
+        opacity: 0.75;
+    }
+    100%{
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+.bg-color{
+    background: #fa96b5;
+}
+.bg-color .desc{
+    background:#fff;
+}
+.bg-color [data-icon]:after{
+     color:#fa96b5;
+}
+.bg-color h2{
+    color:#fff;
+    text-shadow:4px  4px 4px rgba(0,0,0,0.1);
+}
+.bg-color p{
+    color:rgba(255,255,255,0.6);
+}
+@media screen and (max-width:520px) {
+
+
+    .desc{
+        width:100px;
+        height:100px;
+        left:50%;
+        margin-left:-50px;
+    }
+    [data-icon]:after{
+        width:100px;
+        height:100px;
+        color:#fff;
+        font-size: 45px;
+        text-align: center;
+        line-height: 100px;
+        position: absolute;
+        left:50%;
+        top:50%;
+        margin:-50px 0 0 -50px;
+
+    }
+    .box h2{
+        font-size: 40px;
+        top: 30%;
+    }
+    .box p{
+        width:80%;
+        left: 10%;
+         top: 30%;
+        font-size: 16px;
+    }
+    .container a{
+        font-size: 14px;
+    }
+}
