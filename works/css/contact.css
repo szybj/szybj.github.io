@@ -1,0 +1,9 @@
+#contact{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:100%;
+    background:black;
+    display:none;
+    transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
