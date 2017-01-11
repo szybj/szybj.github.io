@@ -1,8 +1,8 @@
 /*
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
-* @Last Modified by:   szy
-* @Last Modified time: 2017-01-09 16:35:41
+* @Last Modified by:   szybj
+* @Last Modified time: 2017-01-10 01:31:56
 */
 
 body,p,h1,h2,h3,h4,ol,ul{
@@ -240,6 +240,33 @@ a{
     position: absolute;
 }
 /*大陆*/
+.plane{
+    width:150%;
+    height:40px;
+    top:-200px;
+    position: absolute;
+
+}
+
+.plane .planePic{
+    width:62px;
+    height:46px;
+    position: absolute;
+    top:-16px;
+    left:-10%;
+    background-position: -488px -45px;
+    animation:plane 50s  infinite linear ;
+}
+
+
+@keyframes plane {
+    0%{
+        left:-10%;
+    }
+    100%{
+        left:100%;
+    }
+}
 .box .road{
    -webkit-transition: all 1s ease-out;
    text-align: center;
@@ -267,16 +294,7 @@ a{
 
      transition:all 0.6s ease-out;
 }
-.moveDown{
-     //animation: move 1.4s infinite linear;
 
-
-}
-.moveUp{
-     //animation: move 1.4s infinite linear;
-   transform:translate(0,0px);
-    transition-delay:0.5s;
-}
 @-webkit-keyframes move {
    0%{
         background-position: -16px -448px;
@@ -404,7 +422,7 @@ a{
     height:23px;
     background-position: -82px -248px;
     left:0px;
-    animation:eye 10s infinite ease-in;
+    animation:eye 5s infinite linear;
     position:absolute;
 
 
@@ -430,16 +448,16 @@ a{
             transform:translate(34px,3px);
             }
         60%{
-            transform:translate(20px,8px);
+            transform:translate(20px,12px);
             }
         70%{
-            transform:translate(20px,8px);
+            transform:translate(20px,12px);
             }
         80%{
-            transform:translate(10px,5px);
+            transform:translate(0px,0px);
             }
         90%{
-            transform:translate(0px,4px);
+            transform:translate(0px,0px);
             }
         100%{
             transform:translate(0px,0px);

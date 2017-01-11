@@ -1,8 +1,8 @@
    /*
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
-    * @Last Modified by:   szy
-    * @Last Modified time: 2017-01-09 16:38:08
+    * @Last Modified by:   szybj
+    * @Last Modified time: 2017-01-10 02:27:19
     */
     (function(){
     var $box = $('.box');
@@ -179,6 +179,41 @@
         }
         flag = !flag;
     },2000);
+
+    //飞机
+
+    var n = 0;
+    var isPlane = true;
+    $('.plane').find('.planePic').on('mouseover',function(){
+
+         _thisx = $(this);
+        if(isPlane){
+            isPlane = !isPlane;
+            n++;
+            setTimeout(function(){
+                isPlane = !isPlane;
+            },5000)
+        }
+
+        $(this).css({
+            'transform':'rotate('+n*360+'deg)',
+            'transform-origin':'bottom',
+            'animation-play-state':' paused',
+            'transition':'transform 5s linear'
+        });
+
+    });
+    $('.plane').find('.planePic').on('mouseout',function(){
+        _this =  $(this);
+        setTimeout(function(){
+            if(isPlane){
+                _this.css({
+                    'animation-play-state':' running'
+                })
+            }
+        },5000)
+
+    })
 
      //生成0~5的随机数
      function ranDom(){
