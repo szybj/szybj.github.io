@@ -2,17 +2,23 @@
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
 * @Last Modified by:   szybj
-* @Last Modified time: 2017-01-10 01:31:56
+* @Last Modified time: 2017-01-15 21:52:55
 */
 
 body,p,h1,h2,h3,h4,ol,ul{
     margin:0;
     padding:0;
 }
-body,html{
-    height:100%;
-    overflow: hidden;
-    background: #183C55;
+body{
+ overflow: hidden;
+    height: 100%;
+    width:100%;
+    background:#11a9cc;
+}
+html{
+
+ height: 100%;
+
 }
 ul,ol{
     list-style:none;
@@ -24,33 +30,25 @@ a{
 
 #top{
     width:100%;
-    position:fixed;
     z-index:100;
+    left:0px;
+    position:fixed;
 
 }
 #nav{
     width: 100%;
     overflow-: hidden;
-    display:none;
-    top:-100%;
+    transform:translateY(-80px);
     position: relative;
     transition:all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    min-height: 80px;
+    background: rgba(14,35,53,0.6);
 }
-#nav .z{
-    height:100%;
-    left:0;
-    top:0;
-    background:#0e2235;
-    opacity: 0.6;
-    width: 100%;
-    position:absolute;
 
-}
 #nav .navList{
-    padding:20px 0 10px 0;
     text-align: center;
-    margin:0 70px 0 110px;
     font-size: 0;
+    padding:10px 100px;
 }
 #nav .navList li{
 
@@ -60,7 +58,7 @@ a{
     border-radius: 1px;
     display:inline-block;
     line-height: 33px;
-    margin:0 3px 14px 3px;
+    margin:10px 5px;
 }
 #nav .navList li span{
     background: #9ad0e9;
@@ -87,10 +85,10 @@ a{
 }
 
 #menu{
-    margin:20px;
     z-index:100;
-    position:fixed;
     overflow:hidden;
+    position:fixed;
+    margin:20px;
 }
 #menu .onOff{
     width:31px;
@@ -196,7 +194,6 @@ a{
 }
 #title{
     position: relative;
-    z-index-: 10;
     left:50%;
     margin-left:-175px;
     width:380px;
@@ -204,6 +201,7 @@ a{
     top:120px;
     color:#fff;
     text-align: center;
+    z-index: 10;
 }
 #title h1{
     font-size: 40px;
@@ -221,10 +219,9 @@ a{
     top: 0;
     left: 0;
     width: 100%;
-    transition: all 0.5s ease-out;
     transform:translateY(469px);
     position: absolute;
-    height: 520px;;
+    bottom: 0px;
 
 }
 
@@ -235,16 +232,17 @@ a{
     position: absolute;
     height: 500px;
     top: -500px;
+    background: #183C55;
 }
 .box .cloud div{
     position: absolute;
 }
 /*大陆*/
 .plane{
-    width:150%;
     height:40px;
+    width:150%;
     top:-200px;
-    position: absolute;
+    position:absolute;
 
 }
 
@@ -252,10 +250,10 @@ a{
     width:62px;
     height:46px;
     position: absolute;
-    top:-16px;
+    top:-20px;
     left:-10%;
     background-position: -488px -45px;
-    animation:plane 50s  infinite linear ;
+    animation:plane 20s  infinite linear ;
 }
 
 
@@ -267,27 +265,27 @@ a{
         left:100%;
     }
 }
-.box .road{
+.road{
    -webkit-transition: all 1s ease-out;
-   text-align: center;
+
    font-size: 0;
-   top: 0;
+
    left: 0;
    right: 0;
    background-color: #4DBFD9;
-   bottom: 0;
    height: 90px;
+   position: absolute;
 
 }
 .content{
     width:165px;
-    transition: all 1s ease-out;
-    margin:0 10px;
-    text-align: center;
     z-index:1;
-    position:relative;
-    display:inline-block;
-    height:260px;
+    top:400px;
+    left:100%;
+    text-align: center;
+    position:absolute;
+    transition:all 1s ease-out;
+    margin:0 10px;
 
 }
 .d{
@@ -917,7 +915,6 @@ transition:all 0.6s ease-in;
     background:url(
     '../images/sprite-nv-special.png') no-repeat;
     top: 0;
-    transform: translateY(-28px);
 }
 .con35Text{
     width:36px;
@@ -1118,7 +1115,6 @@ transition:all 0.6s ease-in;
     left: 0;
     width: 100%;
     background-color: #4DBFD9;
-    bottom: 0;
 }
 .box .mountain .right{
     position: absolute;
@@ -1130,58 +1126,200 @@ transition:all 0.6s ease-in;
     background-position: 0 -501px;
 }
 /*海*/
-.box .seaF{
+.seaF{
     top: 90px;
-    left: 0;
-    right: 0;
+    width:100%;
+    height:100%;
     background-color: #11a9cc;
-    bottom: 0;
+
     position: absolute;
 }
+.wrap{
+    position: absolute;
+    left: 50%;
 
+}
+/* 一行显示五个的情况 */
+@media screen and (min-width:1021px){
+
+/*     .wrap{
+    width:925px;
+    margin-left: -462px;
+}
+.c1{
+    top:0px;
+    left:0px;
+}
+.c2{
+    top:0px;
+    left:185px;
+}
+.c3{
+    top:0px;
+    left:370px;
+}
+.c4{
+    top:0px;
+    left:555px;
+}
+.c5{
+    top:0px;
+    left:740px;
+} */
+
+}
+/* 四个一行的情况 */
+@media screen and (min-width:801px) and (max-width:1020px){
+    body{
+        overflow-y:auto;
+    }
+   /* .seaF{
+          height:360px;
+      }
+    .wrap{
+        width:740px;
+        margin-left:-370px;
+    }
+    .c1{
+        top:0px;
+        left:0px;
+    }
+    .c2{
+        top:0px;
+        left:185px;
+    }
+    .c3{
+        top:0px;
+        left:370px;
+    }
+    .c4{
+        top:0px;
+        left:555px;
+    }
+    .c5{
+        left:277px;
+        top:270px;
+    } */
+}
+/* 三个在一行的情况 */
+@media screen and (min-width:620px) and (max-width:800px){
+    body{
+        overflow-y:auto;
+    }
+    /* .seaF{
+        height:360px;
+    }
+    .wrap{
+        width:554px;
+        margin-left:-277px;
+    }
+    .c1{
+        top:0px;
+        left:0px;
+    }
+    .c2{
+        top:0px;
+        left:185px;
+    }
+    .c3{
+        top:0px;
+        left:370px;
+    }
+    .c4{
+        left:92px;
+        top:270px;
+    }
+    .c5{
+        left:277px;
+        top:270px;
+    } */
+}
+/* 两个在一行的情况 */
+@media screen and (min-width:451px) and (max-width:619px){
+    body{
+        overflow-y:auto;
+    }
+
+    /* .wrap{
+        width:370px;
+        margin-left:-185px;
+    }
+    .seaF{
+        height:640px;
+    }
+    .c1{
+        top:0px;
+        left:0px;
+    }
+    .c2{
+        top:0px;
+        left:185px;
+    }
+    .c3{
+        left:0px;
+        top:270px;
+    }
+    .c4{
+        left:185px;
+        top:270px;
+    }
+    .c5{
+        left:92px;
+        top:540px;
+    } */
+}
+/* 一个一行的情况 */
 @media screen and (max-width:450px){
+    body{
+        overflow-y:auto;
+    }
     #nav .navList{
-         padding-top:80px;
-         margin:0 15px;
+         padding:80px 0px 0px 0px;
          width: auto;
     }
-    #nav .z{
+    #nav{
+        background:#0e2235;
+        opacity:0.9;
         box-shadow: 0 30px 30px 30px #0e2235;
+    }
+    #nav .navList{
+        position: relative;
     }
     #nav .navList li{
         width:70%;
         margin-bottom: 10px;
     }
-}
-@media screen and (min-width:701px) and (max-width:1020px){
-    body{
-        overflow-y:auto;
+    /* .wrap{
+        width:185px;
+        margin-left:-92px;
     }
-    .box{
-        height:520px;
-        transition: all 1s ease-out;
+    .seaF{
+        height:1160px;
     }
+    .c1{
+        top:0px;
+        left:0px;
+    }
+    .c2{
+        left:0px;
+        top:270px;
+    }
+    .c3{
+        left:0px;
+        top:540px;
+    }
+    .c4{
+        left:0px;
+        top:810px;
+    }
+    .c5{
+        left:0px;
+        top:1080px;
+    } */
 
 }
 
-@media screen and (min-width:520px) and (max-width:700px){
-    body{
-        overflow-y:auto;
-    }
-    .box{
-        height:780px;
-    }
-}
-
-@media screen and (max-width:519px){
-    body{
-        overflow-y:auto;
-    }
-    .box{
-        height:1300px;
-    }
-}
-
+/*高*/
 @media screen and (max-height:489px){
     body{
          overflow:hidden;
