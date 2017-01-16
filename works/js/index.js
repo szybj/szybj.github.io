@@ -2,16 +2,16 @@
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
     * @Last Modified by:   szybj
-    * @Last Modified time: 2017-01-15 21:21:44
-    */
-    var $menuOnOff = $('#menu').find('.onOff');
-    var $link = $('.link');
+    * @Last Modified time: 2017-01-16 23:53:21
+    *
+   'use strict';
+
+
+    /*导航菜单*/
+    (function(){
+
     var $menuHome = $('#menuHome');
-    var $content = $('.content');
-    var $d = $('.d');
     var $a = $('.navList').find('a');
-
-
     $a.on('click',function(){
         $(this).addClass('active').siblings('a').removeClass('active');
         console.log($('.menuHome').position());
@@ -21,10 +21,7 @@
                 'transition':'all 0.35s ease-out'
             });
         }
-
     })
-
-
     $a.eq(0).on('click',function(){
         $('#home').css('top','100%');
         $('#about').css('top','0%');
@@ -45,14 +42,12 @@
         $('#home').css({
             'top':'-100%'
         })
-
         $('#contact').css({
             'display':'block',
             'top':'0%'
         })
     });
     $menuHome.on('click',function(){
-
         $('.menuHome').css({
             'transform':'translateX(36px)',
             'transition':'all 0.35s ease-out'
@@ -71,16 +66,10 @@
             'top':'0%'
         });
     });
-
-   /* 设置时间*/
-    var date = new Date();
-    var setting = {
-        year:date.getFullYear(),
-        day :date.getDate()
-    }
-
+    })();
     /*导航菜单的显示隐藏*/
     ;(function(){
+        var $menuOnOff = $('#menu').find('.onOff');
         var navH = $('#nav').height();
         var navOn = true;
         moveTop();
@@ -120,10 +109,9 @@
             navOn = !navOn;
         });
     })();
-
-
     /*链接移入移出*/
     (function(){
+        var $link = $('.link');
         $link.on('mouseover',function(){
           $(this).css('backgroundPositionX',-187);
           $(this).prev().css({
@@ -139,8 +127,6 @@
             "transform":"translate(60px,-178px)"
           });
         });
-
-
     })();
     /*变换位置*/
     (function(){
@@ -290,122 +276,143 @@
                 })
             }
         }
-
-
     })();
-
-    /*点击抖动掉落*/
+    /*滑过下降*/
     (function(){
-        $('.content').find('.d').on('mouseover',function(){
-           $(this).css({
-                  'transform':'translateY(10px)'
+        var $d = $('.d');
+        $('.d').on('mouseover',moveDown);
+        function moveDown(){
+            $(this).css({
+                'transition':'all 0.05s ease-out',
+                'transform':'translateY(10px)'
               });
            //$(this).toggleClass('moveDown');
-        });
-        $('.content').find('.d').on('mouseout',function(){
-            $(this).css({
-                  'transform':'translateY(0px)'
-              });
-        });
+        }
+        $('.d').on('mouseout', moveUp);
+        function moveUp(){
+           //console.log(this)
+            var _this = this;
+            setTimeout(function(){
+                $(_this).css({
+                    'transition':'all 0.35s ease-out',
+                    'transform':'translateY(0px)'
+                });
+            },500);
+
+        }
+
+        //点击抖动掉落
+
         $.each($d,function(i,item){
             $(item).on('click',function(){
-                var _this = $(this);
+                var _this = this;
+                $(this).off('mouseout',moveDown);
+                $(this).off('mouseout',moveUp);
                  $(this).css({
-
+                    'transition':'all 0.6s ease-out',
                         'transform':'translateY(100%)'
                     });
-                _this.timer = setTimeout(function(){
-                    _this.css({
-
+                $(_this).timer = setTimeout(function(){
+                    $(_this).css({
                         'transform':'translateY(0%)'
                     })
-                },1000);
-                console.log(_this)
+                    $(_this).on('mouseout',moveDown);
+                    $(_this).on('mouseout',moveUp);
+                },3000);
             })
         });
     })();
 
-
-   /* 日期*/
-    $('.number').css('transform', 'translateY('+(1-setting.day)*28+'px)');
-    /*手机*/
-    var flag = true;
-    setInterval(function(){
-        if(flag){
-            $('.bg29').css('transform', 'translateX(-29px)');
-        }else{
-             $('.bg29').css('transform', 'translateX(0px)');
+    var date = new Date();
+        var setting = {
+            year:date.getFullYear(),
+            day :date.getDate()
         }
-        flag = !flag;
-    },4000);
+   /* 日期*/
+   ;(function(){
+        /* 设置时间*/
 
-
+        $('.number').css('transform', 'translateY('+(1-setting.day)*28+'px)');
+   })();
+    /*手机*/
+    (function(){
+        var flag = true;
+        setInterval(function(){
+            if(flag){
+                $('.bg29').css('transform', 'translateX(-29px)');
+            }else{
+                 $('.bg29').css('transform', 'translateX(0px)');
+            }
+            flag = !flag;
+        },4000);
+    })();
     /*飞机*/
     (function(){
-        var n = 0;
-        var isPlane = true;
-        $('.planePic').on('mouseover',function(){
+        var n = 1;
+        var isPlane = true;//运动状态
+        $('.planePic').mouseover(function(){
 
+            var _this = this;
+            if(!isPlane){
+                return 0
+            };
+            isPlane = false;
+            $(this).css({
+                'transform':'rotate('+n*360+'deg)',
+                'transform-origin':'bottom',
+                'animation-play-state':' paused',
+                'transition':'transform 2s linear'
+            });
 
-            if(isPlane){
-                isPlane = !isPlane;
-                n++;
-                setTimeout(function(){
-                    isPlane = !isPlane;
-                },3000)
+            function transitionEnd(){
 
-
-                $(this).css({
-                    'transform':'rotate('+n*360+'deg)',
-                    'transform-origin':'bottom',
-                    'animation-play-state':' paused',
-                    'transition':'transform 3s linear'
+                $(_this).css({
+                    'animation-play-state':' running'
                 });
+                isPlane = true;
+                n++;
+                $(_this).off('transitionend', transitionEnd);
             }
-        });
-        $('.planePic').on('mouseout',function(){
-             var _this = $(this);
-            setTimeout(function(){
-                if(isPlane){
-                    _this.css({
-                        'animation-play-state':' running'
-                    })
-                }
-            },3000)
-
+           $(this).on('transitionend', transitionEnd);
         })
     })();
-
-
-     /*生成0~5的随机数*/
-     function ranDom(){
-        return Math.floor(Math.random() * 5);
-     }
+     /*产生随机数[n,m)*/
+    function ranDom(n,m){
+        return parseInt(Math.random()*(m-n))+n;
+    }
     /* 电视*/
-     setInterval(function(){
-         if(flag){
-             $('.bg24').css('transform', 'translateY(100%)');
-         }else{
-              $('.bg24').css('transform', 'translateY(0%)');
-         }
-         flag = !flag;
-     },2000);
-     /*音量*/
-     setInterval(function(){
-         if(flag){
-             $('.con46').css('transform', 'translateY(100%)');
-         }else{
-              $('.con46').css('transform', 'translateY(0%)');
-         }
-         flag = !flag;
-     },2000);
-     /*头像切换*/
+    (function(){
+        var flag = true;
+        setInterval(function(){
+            if(flag){
+                $('.bg24').css('transform', 'translateY(100%)');
+            }else{
+                 $('.bg24').css('transform', 'translateY(0%)');
+            }
+            flag = !flag;
+        },2000);
+    })();
+
+    /*音量*/
+    (function(){
+        var flag = true;
+        setInterval(function(){
+            if(flag){
+                $('.con46').css('transform', 'translateY(100%)');
+            }else{
+                 $('.con46').css('transform', 'translateY(0%)');
+            }
+            flag = !flag;
+        },2000);
+    })();
+
+    /*头像切换*/
     (function(){
         setInterval(function(){
-            $('.picTop').css('transform','translateX('+-ranDom() * 44+'px)');
+            $('.picTop').css('transform','translateX('+-ranDom(0,5) * 44+'px)');
         },3500);
         setInterval(function(){
-            $('.picBottom').css('transform','translateX('+-ranDom() * 44+'px)');
+            $('.picBottom').css('transform','translateX('+-ranDom(0,5) * 44+'px)');
          },3000);
     })();
 

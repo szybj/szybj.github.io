@@ -2,7 +2,7 @@
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
 * @Last Modified by:   szybj
-* @Last Modified time: 2017-01-15 21:52:55
+* @Last Modified time: 2017-01-16 23:21:56
 */
 
 body,p,h1,h2,h3,h4,ol,ul{
@@ -29,10 +29,12 @@ a{
 }
 
 #top{
-    width:100%;
     z-index:100;
     left:0px;
     position:fixed;
+    width:100%;
+    top:0px;
+    height:0px;
 
 }
 #nav{
@@ -46,9 +48,9 @@ a{
 }
 
 #nav .navList{
-    text-align: center;
     font-size: 0;
-    padding:10px 100px;
+    padding: 10px 100px;
+    text-align: center;
 }
 #nav .navList li{
 
@@ -193,15 +195,15 @@ a{
     transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
 #title{
-    position: relative;
     left:50%;
-    margin-left:-175px;
-    width:380px;
+    margin-left:-150px;
     height:85px;
-    top:120px;
     color:#fff;
     text-align: center;
-    z-index: 10;
+    width: 300px;
+    top: 120px;
+    position:relative;
+    z-index:10;
 }
 #title h1{
     font-size: 40px;
@@ -221,7 +223,6 @@ a{
     width: 100%;
     transform:translateY(469px);
     position: absolute;
-    bottom: 0px;
 
 }
 
@@ -239,21 +240,21 @@ a{
 }
 /*大陆*/
 .plane{
-    height:40px;
-    width:150%;
-    top:-200px;
     position:absolute;
+    left:0;
+    width:150%;
+    height:50px;
+    top:-220px;
 
 }
 
 .plane .planePic{
     width:62px;
-    height:46px;
     position: absolute;
-    top:-20px;
     left:-10%;
     background-position: -488px -45px;
-    animation:plane 20s  infinite linear ;
+    animation:plane 30s  infinite linear ;
+    height:46px;
 }
 
 
@@ -1110,11 +1111,7 @@ transition:all 0.6s ease-in;
     background-position: 0 -666px;
 }
 .box .sea{
-    position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #4DBFD9;
 }
 .box .mountain .right{
     position: absolute;
