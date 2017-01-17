@@ -2,7 +2,7 @@
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
     * @Last Modified by:   szybj
-    * @Last Modified time: 2017-01-16 23:53:21
+    * @Last Modified time: 2017-01-18 02:04:00
     *
    'use strict';
 
@@ -138,6 +138,9 @@
             var clientWidth = $(window).width();
             console.log(clientWidth)
             if(clientWidth > 1021){
+                $('.seaF').css({
+                       'height':'100px'
+                   })
                 $('.wrap').css({
                     'width':'925px',
                     'marginLeft': '-462px'
