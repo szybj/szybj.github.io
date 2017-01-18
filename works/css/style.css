@@ -2,7 +2,7 @@
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
 * @Last Modified by:   szybj
-* @Last Modified time: 2017-01-16 23:21:56
+* @Last Modified time: 2017-01-18 22:56:45
 */
 
 body,p,h1,h2,h3,h4,ol,ul{
@@ -221,8 +221,9 @@ a{
     top: 0;
     left: 0;
     width: 100%;
-    transform:translateY(469px);
+    transform:translateY(480px);
     position: absolute;
+    transition:all 0.6s ease-out;
 
 }
 
@@ -1124,12 +1125,11 @@ transition:all 0.6s ease-in;
 }
 /*海*/
 .seaF{
-    top: 90px;
-    width:100%;
+    background-color:#11a9cc;
+    position:absolute;
     height:100%;
-    background-color: #11a9cc;
-
-    position: absolute;
+    width:100%;
+    top:90px;
 }
 .wrap{
     position: absolute;
