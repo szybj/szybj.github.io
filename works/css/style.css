@@ -2,7 +2,7 @@
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
 * @Last Modified by:   szybj
-* @Last Modified time: 2017-01-18 23:26:45
+* @Last Modified time: 2017-01-18 23:34:27
 */
 
 body,p,h1,h2,h3,h4,ol,ul{
@@ -226,14 +226,9 @@ a{
     top: 0;
     left: 0;
     width: 100%;
-<<<<<<< HEAD
     transform:translateY(480px);
-=======
-    transition:all 0.35s ease-out;
-    transform:translateY(469px);
->>>>>>> refs/remotes/origin/master
-    position: absolute;
     transition:all 0.6s ease-out;
+    position: absolute;
 
 }
 

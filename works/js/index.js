@@ -2,7 +2,7 @@
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
     * @Last Modified by:   szybj
-    * @Last Modified time: 2017-01-18 23:27:26
+    * @Last Modified time: 2017-01-18 23:34:57
     *
     */
    'use strict';
@@ -289,7 +289,7 @@
         $('.d').on('mouseover',moveDown);
         function moveDown(){
             $(this).css({
-                'transition':'all 0.05s ease-out',
+                'transition':'all 0.35s ease-out',
                 'transform':'translateY(10px)'
               });
            //$(this).toggleClass('moveDown');
