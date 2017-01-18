@@ -2,7 +2,7 @@
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
     * @Last Modified by:   szybj
-    * @Last Modified time: 2017-01-18 23:34:57
+    * @Last Modified time: 2017-01-18 23:59:01
     *
     */
    'use strict';
@@ -289,18 +289,20 @@
         $('.d').on('mouseover',moveDown);
         function moveDown(){
             $(this).css({
-                'transition':'all 0.35s ease-out',
-                'transform':'translateY(10px)'
+                'transition':'all 0.15s linear',
+                'transform':'translateY(16px)'
               });
+
            //$(this).toggleClass('moveDown');
         }
         $('.d').on('mouseout', moveUp);
         function moveUp(){
            //console.log(this)
             var _this = this;
-            setTimeout(function(){
+
+            this.timer = setTimeout(function(){
                 $(_this).css({
-                    'transition':'all 0.35s ease-out',
+                    'transition':'all 0.15s linear',
                     'transform':'translateY(0px)'
                 });
             },500);
