@@ -2,11 +2,17 @@
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
 * @Last Modified by:   szybj
-* @Last Modified time: 2017-01-19 15:20:58
+* @Last Modified time: 2017-01-19 23:24:17
 */
 
-body,p,h1,
-h2,h3,h4,ol,ul {
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+ol,
+ul {
     margin: 0;
     padding: 0;
 }
@@ -22,7 +28,8 @@ html {
     height: 100%;
 }
 
-ul,ol {
+ul,
+ol {
     list-style: none;
 }
 
@@ -268,6 +275,62 @@ a {
 
 .box .cloud div {
     position: absolute;
+}
+
+.cloud .cloud_1 {
+    top: 30%;
+    left: 5%;
+    width: 132px;
+    height: 40px;
+    background-position: -298px -460px;
+}
+
+.cloud .cloud_2 {
+    top: 20%;
+    left: 45%;
+    width: 104px;
+    height: 30px;
+    background-position: -298px -392px;
+}
+
+.cloud .cloud_3 {
+    top: 30%;
+    right: 10%;
+    width: 155px;
+    height: 36px;
+    background-position: -298px -423px;
+}
+
+.cloud .cloud_4 {
+    top: 72%;
+    left: 10%;
+    width: 97px;
+    height: 24px;
+    background-position: -298px -348px;
+}
+
+.cloud .cloud_5 {
+    top: 78%;
+    left: 40%;
+    width: 71px;
+    height: 24px;
+    background-position: -396px -373px;
+}
+
+.cloud .cloud_6 {
+    top: 78%;
+    left: 60%;
+    width: 83px;
+    height: 18px;
+    background-position: -298px -373px;
+}
+
+.cloud .cloud_7 {
+    top: 72%;
+    left: 82%;
+    width: 83px;
+    height: 24px;
+    background-position: -403px -398px;
 }
 
 
@@ -1265,32 +1328,7 @@ a {
 
 /* 一行显示五个的情况 */
 
-@media screen and (min-width:1021px) {
-    /*     .wrap{
-    width:925px;
-    margin-left: -462px;
-}
-.c1{
-    top:0px;
-    left:0px;
-}
-.c2{
-    top:0px;
-    left:185px;
-}
-.c3{
-    top:0px;
-    left:370px;
-}
-.c4{
-    top:0px;
-    left:555px;
-}
-.c5{
-    top:0px;
-    left:740px;
-} */
-}
+@media screen and (min-width:1021px) {}
 
 
 /* 四个一行的情况 */
@@ -1299,36 +1337,6 @@ a {
     body {
         overflow-y: auto;
     }
-    .box {
-        transform: translateY(300px);
-    }
-    /* .seaF{
-          height:360px;
-      }
-    .wrap{
-        width:740px;
-        margin-left:-370px;
-    }
-    .c1{
-        top:0px;
-        left:0px;
-    }
-    .c2{
-        top:0px;
-        left:185px;
-    }
-    .c3{
-        top:0px;
-        left:370px;
-    }
-    .c4{
-        top:0px;
-        left:555px;
-    }
-    .c5{
-        left:277px;
-        top:270px;
-    } */
 }
 
 
@@ -1338,33 +1346,6 @@ a {
     body {
         overflow-y: auto;
     }
-    /* .seaF{
-        height:360px;
-    }
-    .wrap{
-        width:554px;
-        margin-left:-277px;
-    }
-    .c1{
-        top:0px;
-        left:0px;
-    }
-    .c2{
-        top:0px;
-        left:185px;
-    }
-    .c3{
-        top:0px;
-        left:370px;
-    }
-    .c4{
-        left:92px;
-        top:270px;
-    }
-    .c5{
-        left:277px;
-        top:270px;
-    } */
 }
 
 
@@ -1374,33 +1355,6 @@ a {
     body {
         overflow-y: auto;
     }
-    /* .wrap{
-        width:370px;
-        margin-left:-185px;
-    }
-    .seaF{
-        height:640px;
-    }
-    .c1{
-        top:0px;
-        left:0px;
-    }
-    .c2{
-        top:0px;
-        left:185px;
-    }
-    .c3{
-        left:0px;
-        top:270px;
-    }
-    .c4{
-        left:185px;
-        top:270px;
-    }
-    .c5{
-        left:92px;
-        top:540px;
-    } */
 }
 
 
@@ -1426,33 +1380,6 @@ a {
         width: 70%;
         margin-bottom: 10px;
     }
-    /* .wrap{
-        width:185px;
-        margin-left:-92px;
-    }
-    .seaF{
-        height:1160px;
-    }
-    .c1{
-        top:0px;
-        left:0px;
-    }
-    .c2{
-        left:0px;
-        top:270px;
-    }
-    .c3{
-        left:0px;
-        top:540px;
-    }
-    .c4{
-        left:0px;
-        top:810px;
-    }
-    .c5{
-        left:0px;
-        top:1080px;
-    } */
 }
 
 
