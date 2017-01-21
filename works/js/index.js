@@ -2,7 +2,7 @@
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
     * @Last Modified by:   szybj
-    * @Last Modified time: 2017-01-20 00:39:30
+    * @Last Modified time: 2017-01-22 00:55:31
     *
     */
    'use strict';
@@ -21,6 +21,7 @@
                    setting.navToggle();
                    setting.navTab();
                    setting.layOut();
+                   setting.boat();
 
                    $(window).resize(function() {
                        setting.layOut();
@@ -193,10 +194,25 @@
                },
                /* 日期*/
                setTime: function() {
-                   var date = new Date(),
-                       year = date.getFullYear(),
-                       day = date.getDate();
-                   $('.number').css('transform', 'translateY(' + (1 - day) * 28 + 'px)');
+                   setInterval(setHM, 1000);
+                   setHM();
+
+                   function setHM() {
+                       var date = new Date(),
+                           year = date.getFullYear(),
+                           day = date.getDate(),
+                           hour = date.getHours(),
+                           minutes = date.getMinutes();
+                       $('.h').css({
+                           'transform': 'rotate(' + ((hour % 12) * 30 - 90 + (minutes / 60 * 30)) + 'deg)'
+                       })
+                       $('.m').css({
+                           'transform': 'rotate(' + (minutes * 6 - 180) + 'deg)'
+                       })
+
+                       $('.number').css('transform', 'translateY(' + (1 - day) * 28 + 'px)');
+                   }
+
                },
                /*手机*/
                phone: function() {
@@ -422,11 +438,46 @@
                            'top': '1080px'
                        })
                    }
+               },
+               boat: function() {
+                   var timer = null;
+                   var flag = true;
+                   var $boat = $('.boat');
+                   var $bigBoat = $('.bigBoat');
+                   lean($boat);
+                   lean($bigBoat);
+                   function lean(obj) {
+                       obj.on('mouseover', function() {
+                           var _this = this;
+                           if (flag) {
+                               flag = !flag;
+                               clearTimeout(this.timer);
+                               $(this).css({
+                                   'transformOrigin': '50% 90%',
+                                   'transition': '2s',
+                                   'transform': 'rotate(-10deg)'
+                               });
+                               this.timer = setTimeout(function() {
+                                   console.log(_this.timer)
+                                   $(_this).css({
+                                       'transition': '2s',
+                                       'transform': 'rotate(10deg)'
+                                   });
+                               }, 1000);
+                               this.timer = setTimeout(function() {
+                                   console.log(_this.timer)
+                                   $(_this).css({
+                                       'transition': '2s',
+                                       'transform': 'rotate(0deg)'
+                                   });
+                                   flag = !flag;
+                               }, 2000);
+                           }
+                       })
+                   }
                }
-
            }
            return setting.init();
        }
        window.w = win;
    })();
-
