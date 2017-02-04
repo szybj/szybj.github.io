@@ -2,7 +2,7 @@
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
 * @Last Modified by:   szybj
-* @Last Modified time: 2017-01-30 17:26:22
+* @Last Modified time: 2017-02-04 19:41:10
 */
 
 body,
@@ -1426,7 +1426,7 @@ a {
 
 .abCon{
     position: relative;
-    padding: 0 40px;
+    padding: 40px 40px 0px;
     max-width: 984px;
     height:450px;
     margin: 0 auto;

@@ -2,7 +2,7 @@
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-04 17:35:44
+ * @Last Modified time: 2017-02-04 19:05:31
  */
 
 'use strict';
@@ -13,16 +13,17 @@
     var str = '';
     var timer = null;
     var n = 0;
-    var $ul = $('.list').find('ul');
-    var $next = $('.nextPrev').find('.next');
-    var $prev = $('.nextPrev').find('.prev');
+
+    var $ul = $('.tvItem');
+    var $next = $('.btn').find('.next');
+    var $prev = $('.btn').find('.prev');
 
     for (var i = 0; i < data.length; i++) {
         str += '<li title="' + titleData[i] + '"><a href="' + linkDate[i] + '" target="_blank"><img src="' + data[i] + '"></a></li>';
     }
 
     $ul.html(str);
-    var $li = $('.list').find('li');
+    var $li = $('.tvItem').find('li');
     init($li);
     $next.on('click',function(){
         next($li);
@@ -34,13 +35,25 @@
         next($li);
     }, 6000);
     $ul.on('mouseenter',function(){
+
         clearInterval(timer);
     });
     $ul.on('mouseleave',function(){
+
         timer = setInterval(function(){
         next($li);
     }, 6000);
     });
+    for(var i = 0; i<$li.length;i++){
+        $li[i].onmouseover = function(){
+
+            $(this).css({'transform':'scale(1.2)'})
+        }
+        $li[i].onmouseout = function(){
+
+            $(this).css({'transform':'scale(1)'})
+        }
+    }
     function prev(obj) {
         n++;
         if (n > obj.length - 1) {

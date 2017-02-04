@@ -111,4 +111,43 @@
    background:url(../images/sprite-primary.png) no-repeat;
    background-position: -674px -462px;
 }
+/**********************/
+#presenting .tvItem{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+#presenting .tvItem li{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    z-index:0;
+    width:100%;
+    height:100%;
+    transition:all 1s ease-out;
+}
 
+#presenting .tvItem li a{
+    position: absolute;
+    display:block;
+    height:260px;
+    width:100%;
+    overflow:hidden;
+}
+#presenting .tvItem li a img{
+    border:none;
+    display:block;
+    height:260px;
+    width:100%;
+}
+@media screen and (max-width:760px){
+.left,.right{
+    width:100%;
+    max-width:100%;
+    padding-top:60px;
+}
+.right .tab{
+    max-width:100%;
+}
+}

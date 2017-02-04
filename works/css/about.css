@@ -4,7 +4,6 @@
     position:absolute;
     display:none;
     top:-140%;
-    overflow: hidden;
     transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 
 }
@@ -38,8 +37,14 @@
     top:50%;
     left:50%;
 }
-.faces1,.faces2,.faces3{
-    display:none;
+.faces div{
+  transform-origin: 50px 50px;
+    transform:sacle(0);
+    transition:1s;
+}
+.faces1,.faces2,.faces3,.faces4{
+   opacity:0;
+
 }
 .faces1 .l{
     position: absolute;
