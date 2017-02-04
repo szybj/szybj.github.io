@@ -2,7 +2,7 @@
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
 * @Last Modified by:   szybj
-* @Last Modified time: 2017-01-22 01:28:43
+* @Last Modified time: 2017-01-30 17:26:22
 */
 
 body,
@@ -21,11 +21,14 @@ body {
     overflow: hidden;
     height: 100%;
     width: 100%;
-    background: #11a9cc;
+    background: #183C55;
+   // background: #11a9cc;
 }
 
 html {
+    width:100%;
     height: 100%;
+    font-family: lane,open-sans,sans-serif;
 }
 
 ul,
@@ -99,7 +102,7 @@ a {
 }
 
 #nav .navList .active {
-    color: red;
+    color: #94D8E8;
 }
 
 #nav .navList li:hover span {
@@ -210,7 +213,7 @@ a {
 
 #menu .menuHome {
     background-position: -188px -75px;
-    transform: translateX(36px);
+    left:36px;
 }
 
 .main {
@@ -223,9 +226,13 @@ a {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0%;
+    display:none;
+    top:0;
+    left:0;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+
 }
+
 
 #title {
     left: 50%;
@@ -796,11 +803,11 @@ a {
 }
 
 .con17 {
-    bottom: 0px;
     height: 67px;
     width: 46px;
     left: 58px;
     z-index: 2;
+    bottom: 0px;
 }
 
 .bg17 {
@@ -813,7 +820,6 @@ a {
     height: 102px;
     width: 77px;
     left: 65px;
-    bottom: 60px;
 }
 
 .bg18 {
@@ -1192,6 +1198,7 @@ a {
     bottom: 0px;
     width: 66px;
     height: 151px;
+    z-index: 2;
 }
 
 .bg43 {
@@ -1256,6 +1263,7 @@ a {
     bottom: 0px;
     width: 56px;
     height: 42px;
+    z-index: 2;
 }
 
 .bg45 {
@@ -1263,6 +1271,7 @@ a {
     width: 56px;
     height: 38px;
     bottom: 0;
+    z-index: 2;
 }
 
 .con46 {
@@ -1271,6 +1280,7 @@ a {
     width: 36px;
     height: 42px;
     transition: all 0.4s ease-out;
+    z-index: 2;
 }
 
 .bg46 {
@@ -1284,6 +1294,8 @@ a {
     bottom: 0px;
     width: 56px;
     height: 31px;
+    z-index: 3;
+
 }
 
 .bg47 {
@@ -1412,7 +1424,53 @@ a {
     left: 50%;
 }
 
+.abCon{
+    position: relative;
+    padding: 0 40px;
+    max-width: 984px;
+    height:450px;
+    margin: 0 auto;
+    background-:red;
 
+}
+
+.central{
+    position: absolute;
+    top:100px;
+    left: 0;
+    width: 100%;
+    color:#Fff;
+
+}
+.left{
+    position: relative;
+    float: left;
+    display: block;
+    padding-top: 10px;
+    max-width: 400px;
+    width: 39%;
+
+
+}
+.left h1{
+    display:block;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+.left span{
+    line-height:20px;
+}
+.left p{
+    margin-bottom:16px;
+}
+
+.right{
+    position: relative;
+    float: right;
+    height: 450px;
+    width: 59%;
+
+}
 /* 一行显示五个的情况 */
 
 @media screen and (min-width:1021px) {

@@ -2,8 +2,583 @@
     width:100%;
     height:100%;
     position:absolute;
-    top:100%;
-    background:black;
     display:none;
+    top:140%;
+    background:#4DBFD9;
     transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
+
+#contact .bottom{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    background-color: #15A0C8;
+    height:60%;
+}
+@keyframes finish {
+
+    transform:rotate(360deg);
+}
+#contact .fishing{
+    width:100%;
+    position:absolute;
+    height:100%;
+}
+#fishOne{
+    top:20%;
+    left:50%;
+}#fishTwo{
+    left:20%;
+
+}
+#contact .fishing .fishElement{
+    position: absolute;
+    width:350px;
+    height:150px;
+    overflow:hidden;
+}
+
+#contact .fishing .fishing1{
+    position:absolute;
+    width:112px;
+    height:74px;
+    transform-origin:center 300%;
+    left:20%;
+    animation:fishing 10s infinite ease-out;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-376px -157px;
+
+}
+#contact .fishing .fishing2{
+    position:absolute;
+    width:112px;
+    height:74px;
+    transform-origin:center 300%;
+    left:30%;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-376px -157px;
+    animation:fishing 10s infinite ease-in;
+}
+@keyframes fishing{
+    0%{
+        transform:rotate(-180deg)
+    }
+    50%{
+        transform:rotate(180deg)
+    }
+    100%{
+
+        transform:rotate(180deg)
+    }
+
+}
+#contact .emailOuter{
+    position: relative;
+    z-index: 1;
+    width: 800px;
+    margin-left: -400px;
+    left: 50%;
+    top: 16%;
+}
+#contact .emailOuter .pin{
+    position:absolute;
+    left:50%;
+    top:100%;
+}
+#contact .pin .pin-pos{
+
+    position:absolute;
+    width:52px;
+    height:40px;
+    left:-26px;
+
+    overflow:hidden;
+}
+#contact .pin-pos .sanjiao{
+    position: absolute;
+    top:-20px;
+    width:52px;
+    height:40px;
+    background:url(../images/sprite-ui.png) no-repeat;
+    background-position: -315px 0;
+}
+#contact .ping{
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    bottom: 130px;
+    z-index: 10;
+}
+#contact .ping .pingTop{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-489px -222px;
+    height:14px;
+     animation:opacity 6s infinite;
+}
+#contact .ping .pingziWrap{
+    position: absolute;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+
+}
+#contact .pingziWrap .pingzi{
+    position: absolute;
+    width:38px;
+    height:117px;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-551px -67px;
+
+}
+#contact .pingziWrap .pz{
+    position: absolute;
+    left:20px;
+    width:38px;
+    height:117px;
+
+
+}
+#contact .ping .pingBottom{
+    position: absolute;
+    bottom:-12px;
+    left:0;
+    width:100%;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-489px -234px;
+    height:12px;
+    animation:opacity 6s infinite;
+}
+@keyframes opacity {
+    0%{
+        opacity:0.5;
+    }
+    50%{
+         opacity:1;
+    }
+    100%{
+         opacity:0.5;
+    }
+}
+#contact .emailWrap{
+    border-radius: 5px;
+    padding: 30px 20px;
+    background-color: rgba(242,242,242,0.4);
+    margin: 0 20px;
+
+    position: relative;
+}
+
+#contact .emailWrap .emailLeft{
+    width:49%;
+    float:left;
+    position: relative;
+}
+#contact .emailLeft .title{
+    display:inline-block;
+    color: #F2F2F2;
+    padding-bottom: 10px;
+}
+
+.item{
+    padding-top: 10px;
+    margin-bottom:20px;
+    position: relative;
+}
+.item li{
+    /*letter-spacing:1px; */
+    line-height:30px;
+    padding-bottom:6px;
+    position: relative;
+    font-size:14px;
+}
+.item .leftTitle{
+    float:left;
+    min-width:80px;
+    color: #183c55;
+}
+.item a{
+   display:inline-block;
+   height: 30px;
+   color:#fff;
+
+}
+.item a span{
+
+}
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  }
+
+.clearfix {
+  /* 触发 hasLayout */
+  zoom: 1;
+  }
+
+
+#contact .emailWrap .emailRight{
+    float:right;
+    width:49%;
+}
+#contact .emailRight .inputDisplay{
+    position: relative;
+    padding-bottom:10px;
+    width: 100%;
+}
+#contact .emailRight .inputElement{
+    padding:3px 8px;
+    border-radius:5px;
+    background:#fff;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.5);
+}
+#contact .emailRight .inputElement input{
+    width:90%;
+    padding: 6px 5px 5px;
+    color: #1A1A1A;
+    border:none;
+    font-size: 14px;
+}
+#contact .emailRight .inputElement textarea{
+    border: medium none;
+    resize: none;
+    height:60px;
+    width: 98%;
+    padding: 6px 5px 5px;
+    color: #1A1A1A;
+     font-size: 14px;
+}
+#contact .emailRight .submitBtn{
+    text-align:right;
+}
+#contact .emailRight .submit{
+    position: relative;
+    display: inline-block;
+    border-radius: 3px;
+    border: solid 1px #1C91C0;
+    background-color: #1C91C0;
+    padding: 7px 12px;
+    text-align: center;
+    margin: 3px 3px 3px 0;
+    color: #FFF;
+    transition:1s;
+}
+#contact .emailRight .submit:hover{
+
+    background-color: #11A9CC;
+    border-color: #11A9CC;
+}
+*:focus { outline: none; }
+#contact .shore,#contact .shore .wet,#contact .shore .wash,#contact .shore .washBack{
+     background: url(../images/sprite-repeatx.png) repeat-x;
+}
+#contact .shore {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #FBF6A7;
+    background-position: 0 -275px;
+    margin-top: -100px;
+    top: 100%;
+    height: 100px;
+}
+#contact .shore .wet{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:67px;
+    background-position:0 -71px;
+}
+#contact .shore .wash{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:67px;
+    background-position:0 -139px;
+    animation: wash 4s infinite ease-out;
+}
+@-webkit-keyframes wash{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-42px);
+    }
+    100%{
+        transform: translateY(0px)
+    }
+}
+#contact .shore .washBack{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:67px;
+    background:url(../images/sprite-repeatx.png);
+    background-position:0 -207px;
+    animation: washBack 4s infinite ease-out;
+}
+#contact .shore .terra{
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+#contact .terra .crab {
+    position: absolute;
+    top:0;
+    left:0;
+}
+#contact .terra .crab0{
+    animation:sheel0 40s infinite ease-out;
+
+}
+#contact .terra .crab1{
+    animation:sheel1 30s infinite ease-out;
+}
+#contact .terra .crab2{
+    animation:sheel2 40s infinite ease-out;
+}
+
+@keyframes sheel0 {
+0%{
+   left:0%;
+}
+10%{
+   left:20%;
+}
+20%{
+   left:20%;
+}
+30%{
+   left:50%;
+}
+40%{
+   left:50%;
+}
+50%{
+   left:80%;
+}
+60%{
+   left:80%;
+}
+70%{
+   left:50%;
+}
+80%{
+   left:50%;
+}
+90%{
+   left:0%;
+}
+100%{
+   left:0%;
+}
+}
+@keyframes sheel1 {
+0%{
+   left:60%;
+}
+10%{
+   left:60%;
+}
+20%{
+   left:90%;
+}
+30%{
+   left:20%;
+}
+40%{
+   left:30%;
+}
+50%{
+   left:60%;
+}
+60%{
+   left:60%;
+}
+70%{
+   left:90%;
+}
+80%{
+   left:90%;
+}
+90%{
+   left:40%;
+}
+100%{
+   left:40%;
+}
+}
+@keyframes sheel2 {
+0%{
+   left:20%;
+}
+10%{
+   left:20%;
+}
+20%{
+   left:50%;
+}
+30%{
+   left:50%;
+}
+40%{
+   left:70%;
+}
+50%{
+   left:70%;
+}
+60%{
+   left:40%;
+}
+70%{
+   left:40%;
+}
+80%{
+   left:20%;
+}
+90%{
+   left:20%;
+}
+100%{
+   left:20%;
+}
+}
+#contact .crab .shell{
+    position: absolute;
+    width:49px;
+    height:37px;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-489px -139px;
+}
+#contact .crab .armL{
+    position: absolute;
+    top:-4px;
+    left:-15px;
+    width:25px;
+    height:25px;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-489px -196px;
+}
+#contact .crab .armR{
+    position: absolute;
+    top:0px;
+    left:40px;
+    width:25px;
+    height:25px;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-515px -196px;
+}
+#contact .legL,#contact .legR{
+    position: absolute;
+    top:30px;
+    width:21px;
+    height:18px;
+
+}
+@keyframes leg1 {
+    0%{
+        top:-6px
+    }
+    50%{
+        top:-4px
+    }
+    100%{
+        top:-6px
+    }
+}
+@keyframes leg2 {
+    0%{
+        top:-6px
+    }
+    50%{
+        top:-5px
+    }
+    100%{
+        top:-6px
+    }
+
+}
+#contact .legL .leg1{
+    position: absolute;
+    top:-6px;
+    left:0;
+    width:21px;
+    height:18px;
+    animation:leg1 0.6s infinite ease-out;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-489px -177px;
+}
+#contact .legL .leg2{
+    position: absolute;
+    top:-6px;
+    left:10px;
+    width:21px;
+    height:18px;
+    animation:leg2 0.6s infinite ease-out;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-489px -177px;
+}
+#contact .legR .leg1{
+    position: absolute;
+    top:-6px;
+    left:20px;
+    width:21px;
+    height:18px;
+    animation:leg1 0.6s infinite ease-out;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-511px -177px;
+}
+#contact .legR .leg2{
+    position: absolute;
+    top:-6px;
+    left:30px;
+    width:21px;
+    height:18px;
+    animation:leg2 0.6s infinite ease-out;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position:-511px -177px;
+}
+#contact .terra .crab0{
+    left:100px;
+    top:20px;
+}
+#contact .terra .crab1{
+    left:200px;
+    top:30px;
+}
+#contact .terra .crab2{
+    left:300px;
+    top:40px;
+}
+@-webkit-keyframes washBack{
+    0%{
+        transform: translateY(-20px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(-20px)
+    }
+}
+@media screen and (max-width:700px){
+    #contact .emailWrap .emailLeft,#contact .emailWrap .emailRight{
+        width:100%;
+    }
+
+    #contact .bottom{
+        height:80%;
+        transform:translateY(200px);
+    }
+}
+

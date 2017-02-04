@@ -1,0 +1,18 @@
+#calendarp{
+    width:100%;
+    height:100%;
+    position:absolute;
+    display:none;
+    top:-140%;
+    transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+
+}
+
+#calendarp .cloud{
+    width: 100%;
+    position: absolute;
+    height: 600px;
+}
+#calendarp .cloud div {
+    position: absolute;
+}

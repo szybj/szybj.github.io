@@ -2,7 +2,113 @@
     width:100%;
     height:100%;
     position:absolute;
-    top:-100%;
-    background:pink;
-    transition:all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    display:none;
+    top:-140%;
+    transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
+
+#presenting .cloud{
+    width: 100%;
+    position: absolute;
+    height: 600px;
+}
+#presenting .cloud div {
+    position: absolute;
+}
+.mr50{
+    margin-right:50px;
+}
+.aerialTv{
+    position: absolute;
+    width:146px;
+    height:58px;
+    top:-58px;
+    left:50%;
+    margin-left:-73px;
+    background-position: -674px -501px;
+}
+#presenting .tabBtn{
+    width:43px;
+    height:100%;
+    border-radius:5px;
+    position:absolute;
+    top:0px;
+    right:-50px;
+    background-color: #275b7d;
+}
+#presenting .tabBtn .btn{
+    width:100%;
+    height:20px;
+    position: absolute;
+    top:80px;
+    left:0px;
+}
+#presenting .tabBtn .btn a{
+    display:block;
+    position: absolute;
+    width:20px;
+    height:20px;
+    transition:all 1s ease-out;
+
+}
+#presenting .tabBtn .btn a:hover{
+    background-color: #11A9CC;
+}
+#presenting .tabBtn .btn .prev,#presenting .tabBtn .btn .next{
+   background:url(../images/sprite-ui.png) center no-repeat;
+}
+#presenting .tabBtn .btn .prev{
+    top:0px;
+    left:0px;background-color: #1C91C0;
+    background-position: -330px -80px;
+}
+#presenting .tabBtn .btn .next{
+    top:0px;
+    right:0px;background-color: #1C91C0;
+    background-position: -365px -80px;
+}
+#presenting .tabBtn .void{
+    width:26px;
+    height:26px;
+    position: absolute;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position: -630px -429px;
+    top:8px;
+    left:8px;
+}
+#presenting .tabBtn .botBtn{
+    width:100%;
+    position: absolute;
+    left:0;
+    bottom:0;
+    height:150px;
+}
+#presenting .tabBtn .top{
+    width:100%;
+    position: absolute;
+    left:0;
+    top:0px;
+    height:103px;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position: -630px -456px;
+}
+#presenting .tabBtn .bottom{
+    width:34px;
+    height:32px;
+    position: absolute;
+    right:0;
+    bottom:0;
+    background:url(../images/sprite-primary.png) no-repeat;
+    background-position: -674px -429px;
+    border-radius:5px;
+}
+#presenting .bottom .rodiu{
+   position: absolute;
+   bottom: 7px;
+   left:0px;
+   width: 26px;
+   height: 25px;
+   background:url(../images/sprite-primary.png) no-repeat;
+   background-position: -674px -462px;
+}
+

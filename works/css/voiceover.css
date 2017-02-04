@@ -1,9 +1,150 @@
-
 #voiceover{
     width:100%;
     height:100%;
     position:absolute;
-    top:-100%;
-    background:yellow;
-    transition:all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    display:none;
+    top:-140%;
+    transition:all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+#voiceover .cloud{
+    width: 100%;
+    position: absolute;
+    height: 600px;
+}
+#voiceover .cloud div {
+    position: absolute;
+}
+.v{
+    width=device-width;100%;
+    position: absolute;
+    background-color:#1c91c0;
+    padding:20px;
+    border-radius:5px;
+}
+.tabTop{
+    position: relative;
+    background-color:#275b7d;
+    border-radius:5px;
+}
+
+.aerial{
+    position: absolute;
+    width:46px;
+    height:58px;
+    top:-58px;
+    right:20px;
+    background-position: -674px -560px;
+}
+.outer,.outer .sheek{
+      background:url(../images/sprite-presenting.png) no-repeat;
+}
+.outer{
+    padding:10px;
+    position: relative;
+
+    background-position: right 0;
+    border-radius:5px;
+}
+.outer .play{
+    position: relative;
+    width:100%;
+    height:260px;
+    background:#000;
+    cursor: pointer;
+    overflow: hidden;
+
+
+}
+
+.outer .sheek{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: right -281px;
+}
+
+#voiceover .tabBtn{
+    position: relative;
+    width:100%;
+    height:50px;
+    margin-top:20px;
+    background-color: #275b7d;
+    border-radius:5px;
+}
+#voiceover .tabBtn .bars{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+#voiceover .bars .leftBar{
+    position: absolute;
+    top:4px;
+    left:30px;
+    width:59px;
+    height:43px;
+    background-position: -709px -429px;
+}
+#voiceover .bars .rightBar{
+    position: absolute;
+    top:4px;
+    right:30px;
+    width:59px;
+    height:43px;
+    background-position: -709px -429px;
+
+}
+#voiceover .tabBtn .nextPrev{
+    position: relative;
+    width:100%;
+    text-align: center;
+    font-size: 0px;
+    padding-top:3px;
+}
+#voiceover .nextPrev a{
+    transition:0.5s;
+    display:inline-block;
+    width:35px;
+    height:35px;
+    margin:5px 15px;
+
+}
+#voiceover .nextPrev a:hover{
+    background-color:#11A9CC;
+}
+#voiceover .nextPrev .prev,#voiceover .nextPrev .next{
+     background: url(../images/sprite-ui.png) no-repeat;
+}
+#voiceover .nextPrev .prev{
+    background-color:#1C91C0;
+    position: relative;
+    background-position: -322px -73px;
+}
+#voiceover .nextPrev .next{
+    background-color:#1C91C0;
+    position: relative;
+    background-position: -358px -73px;
+}
+#voiceover .outer ul{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background:red;
+}
+.list{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+.outer ul li{
+    position: absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    width:100%;
+    height:100%;
+    transition:all 0.6s;
 }

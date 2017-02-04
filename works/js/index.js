@@ -2,7 +2,7 @@
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
     * @Last Modified by:   szybj
-    * @Last Modified time: 2017-01-22 00:55:31
+    * @Last Modified time: 2017-02-03 21:13:30
     *
     */
    'use strict';
@@ -29,61 +29,173 @@
                },
                /*导航菜单切换*/
                navTab: function() {
-                   var $menuHome = $('#menuHome');
-                   var $a = $('.navList').find('a');
-                   $a.on('click', function() {
-                       $(this).addClass('active').siblings('a').removeClass('active');
-                       console.log($('.menuHome').position());
-                       if ($('.menuHome').position().left === 81) {
-                           $('.menuHome').css({
-                               'transform': 'translateX(0px)',
-                               'transition': 'all 0.35s ease-out'
-                           });
-                       }
+
+                   var $navList = $('.navList'),
+                       $menuHome = $('.menuHome'),
+                       flag = true,
+                       hash = '';
+                   hash = window.location.hash;
+                   if (hash != '') {
+                       $menuHome.css({
+                           'left': '0px'
+                       });
+                       homeHide();
+                   };
+                   show1();
+                   window.onhashchange = hide1;
+                   function hide1() {
+                       switch (hash) {
+                           case '#About':
+                               aboutHide();
+                               break;
+                           case '#Voiceover':
+                               voiceoverHide();
+                               break;
+                           case '#Presenting':
+                               presentingHide();
+                               break;
+                           case '#Calendarp':
+                               calendarpHide();
+                               break;
+                           case '#Contact':
+                               contactHide();
+                               break;
+                           default:
+                               homeHide();
+                       };
+                   };
+                   function show1() {
+                       hash = window.location.hash;
+                       switch (hash) {
+                           case '#About':
+                               aboutShow();
+                               break;
+                           case '#Voiceover':
+                               voiceoverShow();
+                               break;
+                           case '#Presenting':
+                               presentingShow();
+                               break;
+                           case '#Calendarp':
+                               calendarpShow();
+                               break;
+                           case '#Contact':
+                               contactShow();
+                               break;
+                           default:
+                               homeShow();
+                       };
+                   };
+                   function aboutShow() {
+                       $('#about').show();
+                       setTimeout(function() {
+                           $('#about').css({ 'left': '0%', 'top': '0%' });
+                       }, 100);
+                   };
+                   function aboutHide() {
+                       $('#about').css({
+                           'top': '-140%'
+                       });
+                       setTimeout(function() {
+                           $('#about').hide();
+                       }, 800);
+                       show1();
+                   };
+                   function voiceoverShow() {
+                       $('#voiceover').show();
+                       setTimeout(function() {
+                           $('#voiceover').css({ 'left': '0%', 'top': '0%' });
+                       }, 100)
+                   };
+                   function voiceoverHide() {
+                       $('#voiceover').css({ 'top': '-140%' });
+                       setTimeout(function() {
+                           $('#voiceover').hide();
+                       }, 800);
+                       show1();
+                   };
+                   function presentingShow() {
+                       $('#presenting').show();
+                       setTimeout(function() {
+                           $('#presenting').css({ 'left': '0%', 'top': '0%' });
+                       }, 100)
+                   };
+                   function presentingHide() {
+                       $('#presenting').css({ 'top': '-140%' });
+                       setTimeout(function() {
+                           $('#presenting').hide();
+                       }, 800);
+                       show1();
+                   };
+                   function calendarpShow() {
+                       $('#calendarp').show();
+                       setTimeout(function() {
+                           $('#calendarp').css({ 'left': '0%', 'top': '0%' });
+                       }, 100)
+                   };
+                   function calendarpHide() {
+                       $('#calendarp').css({ 'top': '-140%' });
+                       setTimeout(function() {
+                           $('#calendarp').hide();
+                       }, 800);
+                       show1();
+                   };
+                   function contactShow() {
+                       $('#contact').show();
+                       setTimeout(function() {
+                           $('#contact').css({ 'top': '0%' });
+                       }, 50);
+                       $('#home').css({ 'top': '-100%' });
+                       setTimeout(function() {
+                           $('#home').hide();
+                       }, 800);
+                   };
+                   function contactHide() {
+                       $('#contact').css({ 'top': '140%' });
+                       $('#home').css({ 'top': '0%' });
+                       setTimeout(function() {
+                           $('#contact').hide();
+                       }, 800);
+                       show1();
+                   };
+                   function homeShow() {
+                       $('#home').show()
+                       setTimeout(function() {
+                           $('#home').css({ 'top': '0%' });
+                       }, 100)
+                   };
+                   function homeHide() {
+                       $('#home').css({ 'top': '100%' });
+                       setTimeout(function() {
+                           $('#home').hide();
+                       }, 800);
+                       $('.boxWrap').css('top','0%')
+                       show1();
+                   };
+                   $menuHome.click(function() {
+                       $navList.find('a').removeClass('active');
+                       window.location.hash = '';
+                       $(this).css({
+                           'left': '36px'
+                       })
+                       $('#home').show()
+                       setTimeout(function() {
+                           $('#home').css({ 'transform': 'translateY(0%)' });
+                       }, 30)
                    })
-                   $a.eq(0).on('click', function() {
-                       $('#home').css('top', '100%');
-                       $('#about').css('top', '0%');
-                   });
-                   $a.eq(1).on('click', function() {
-                       $('#home').css('top', '100%');
-                       $('#voiceover').css('top', '0%');
-                   });
-                   $a.eq(2).on('click', function() {
-                       $('#home').css('top', '100%');
-                       $('#presenting').css('top', '0%');
-                   });
-                   $a.eq(3).on('click', function() {
-                       $('#home').css('top', '100%');
-                       $('#calendar').css('top', '0%');
-                   });
-                   $a.eq(4).on('click', function() {
-                       $('#home').css({
-                           'top': '-100%'
-                       })
-                       $('#contact').css({
-                           'display': 'block',
-                           'top': '0%'
-                       })
-                   });
-                   $menuHome.on('click', function() {
-                       $('.menuHome').css({
-                           'transform': 'translateX(36px)',
-                           'transition': 'all 0.35s ease-out'
+                   $navList.find('a').click(function(ev) {
+                       var navH = $('#nav').height();
+                       $(this).addClass('active').parent().siblings().find('a').removeClass('active');
+                       ta();
+                       //setting.navToggle();
+                       $('.onOff').find('.close').css('opacity', 0);
+                       $('.onOff').find('.open').css('opacity', 1);
+                       $('.onOff').find('ul').css('left', 0);
+                       $menuHome.css({
+                           'transition': '0.5s',
+                           'left': '0px'
                        });
-                       $('#about').css('top', '-100%');
-                       $('#voiceover').css('top', '-100%');
-                       $('#presenting').css('top', '-100%');
-                       $('#calendar').css('top', '-100%');
-                       $('#contact').css({
-                           'display': 'none'
-                       }).css({
-                           'top': '100%'
-                       });
-                       $('#home').css({
-                           'display': 'block',
-                           'top': '0%'
-                       });
+                       ev.stopPropagation();
                    });
                },
                /*导航菜单的显示隐藏*/
@@ -110,8 +222,9 @@
                            }
                        }
                    }
-                   $menuOnOff.click(function() {
+                   $menuOnOff.on('click', tab);
 
+                   function tab() {
                        $('nav').css('transition', 'all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.1)');
                        if (navOn) {
                            $('.onOff').find('.close').css('opacity', 1);
@@ -127,7 +240,9 @@
                            /*  $('#nav').css('display','none');*/
                        }
                        navOn = !navOn;
-                   });
+                       return tab;
+                   }
+                   window.ta = tab;
                },
                /*链接移入移出*/
                linkInOut: function() {
@@ -157,7 +272,7 @@
                    function moveDown() {
                        $(this).css({
                            'transition': 'all 0.15s linear',
-                           'transform': 'translateY(16px)'
+                           'transform': 'translateY(10px)'
                        });
                        //$(this).toggleClass('moveDown');
                    }
@@ -180,11 +295,11 @@
                            $(this).off('mouseout', moveUp);
                            $(this).css({
                                'transition': 'all 0.6s ease-out',
-                               'transform': 'translateY(100%)'
+                               'transform': 'translateY(200px)'
                            });
                            $(_this).timer = setTimeout(function() {
                                $(_this).css({
-                                   'transform': 'translateY(0%)'
+                                   'transform': 'translateY(0px)'
                                })
                                $(_this).on('mouseout', moveDown);
                                $(_this).on('mouseout', moveUp);
@@ -294,7 +409,7 @@
                /*布局转换*/
                layOut: function() {
                    var clientWidth = $(window).width();
-                   console.log(clientWidth)
+
                    if (clientWidth > 1021) {
 
                        $('.seaF').css({
@@ -446,6 +561,7 @@
                    var $bigBoat = $('.bigBoat');
                    lean($boat);
                    lean($bigBoat);
+
                    function lean(obj) {
                        obj.on('mouseover', function() {
                            var _this = this;
@@ -476,8 +592,9 @@
                        })
                    }
                }
+
            }
            return setting.init();
        }
        window.w = win;
-   })();
+   })(window);
