@@ -2,7 +2,7 @@
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-04 19:05:31
+ * @Last Modified time: 2017-02-05 12:24:22
  */
 
 'use strict';
@@ -25,35 +25,36 @@
     $ul.html(str);
     var $li = $('.tvItem').find('li');
     init($li);
-    $next.on('click',function(){
+    $next.on('click', function() {
         next($li);
     });
-    $prev.on('click', function(){
+    $prev.on('click', function() {
         prev($li);
     })
-    timer = setInterval(function(){
+    timer = setInterval(function() {
         next($li);
     }, 6000);
-    $ul.on('mouseenter',function(){
+    $ul.on('mouseenter', function() {
 
         clearInterval(timer);
     });
-    $ul.on('mouseleave',function(){
+    $ul.on('mouseleave', function() {
 
-        timer = setInterval(function(){
-        next($li);
-    }, 6000);
+        timer = setInterval(function() {
+            next($li);
+        }, 6000);
     });
-    for(var i = 0; i<$li.length;i++){
-        $li[i].onmouseover = function(){
+    for (var i = 0; i < $li.length; i++) {
+        $li[i].onmouseover = function() {
 
-            $(this).css({'transform':'scale(1.2)'})
+            $(this).css({ 'transform': 'scale(1.2)' })
         }
-        $li[i].onmouseout = function(){
+        $li[i].onmouseout = function() {
 
-            $(this).css({'transform':'scale(1)'})
+            $(this).css({ 'transform': 'scale(1)' })
         }
     }
+
     function prev(obj) {
         n++;
         if (n > obj.length - 1) {
@@ -61,6 +62,7 @@
         }
         init(obj);
     }
+
     function next(obj) {
         n++;
         if (n > obj.length - 1) {
@@ -68,6 +70,7 @@
         }
         init(obj);
     }
+
     function init(obj) {
         for (var i = 0; i < obj.length; i++) {
             obj[i].style.zIndex = 0;

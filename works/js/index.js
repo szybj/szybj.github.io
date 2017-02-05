@@ -2,7 +2,7 @@
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
     * @Last Modified by:   szybj
-    * @Last Modified time: 2017-02-03 21:13:30
+    * @Last Modified time: 2017-02-05 22:27:14
     *
     */
    'use strict';
@@ -121,18 +121,18 @@
                        }, 100)
                    };
                    function presentingHide() {
-                       $('#presenting').css({ 'top': '-140%' });
-                       setTimeout(function() {
+                      $('#presenting').css({ 'top': '-140%' });
+                      setTimeout(function() {
                            $('#presenting').hide();
-                       }, 800);
-                       show1();
-                   };
-                   function calendarpShow() {
-                       $('#calendarp').show();
-                       setTimeout(function() {
-                           $('#calendarp').css({ 'left': '0%', 'top': '0%' });
-                       }, 100)
-                   };
+                      }, 800);
+                      show1();
+                  };
+                  function calendarpShow() {
+                      $('#calendarp').show();
+                      setTimeout(function() {
+                          $('#calendarp').css({ 'left': '0%', 'top': '0%' });
+                      }, 100)
+                    };
                    function calendarpHide() {
                        $('#calendarp').css({ 'top': '-140%' });
                        setTimeout(function() {
