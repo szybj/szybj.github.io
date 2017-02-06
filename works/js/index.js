@@ -2,7 +2,7 @@
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
     * @Last Modified by:   szybj
-    * @Last Modified time: 2017-02-05 22:27:14
+    * @Last Modified time: 2017-02-06 20:48:26
     *
     */
    'use strict';
@@ -45,19 +45,19 @@
                    window.onhashchange = hide1;
                    function hide1() {
                        switch (hash) {
-                           case '#About':
+                           case '#about':
                                aboutHide();
                                break;
-                           case '#Voiceover':
-                               voiceoverHide();
+                           case '#jineng':
+                               jinengHide();
                                break;
-                           case '#Presenting':
-                               presentingHide();
+                           case '#works':
+                               worksHide();
                                break;
-                           case '#Calendarp':
-                               calendarpHide();
+                           case '#texiao':
+                               texiaoHide();
                                break;
-                           case '#Contact':
+                           case '#contact':
                                contactHide();
                                break;
                            default:
@@ -67,19 +67,19 @@
                    function show1() {
                        hash = window.location.hash;
                        switch (hash) {
-                           case '#About':
+                           case '#about':
                                aboutShow();
                                break;
-                           case '#Voiceover':
-                               voiceoverShow();
+                           case '#jineng':
+                               jinengShow();
                                break;
-                           case '#Presenting':
-                               presentingShow();
+                           case '#works':
+                               worksShow();
                                break;
-                           case '#Calendarp':
-                               calendarpShow();
+                           case '#texiao':
+                               texiaoShow();
                                break;
-                           case '#Contact':
+                           case '#contact':
                                contactShow();
                                break;
                            default:
@@ -101,42 +101,42 @@
                        }, 800);
                        show1();
                    };
-                   function voiceoverShow() {
-                       $('#voiceover').show();
+                   function jinengShow() {
+                       $('#jineng').show();
                        setTimeout(function() {
-                           $('#voiceover').css({ 'left': '0%', 'top': '0%' });
+                           $('#jineng').css({ 'left': '0%', 'top': '0%' });
                        }, 100)
                    };
-                   function voiceoverHide() {
-                       $('#voiceover').css({ 'top': '-140%' });
+                   function jinengHide() {
+                       $('#jineng').css({ 'top': '-140%' });
                        setTimeout(function() {
-                           $('#voiceover').hide();
+                           $('#jineng').hide();
                        }, 800);
                        show1();
                    };
-                   function presentingShow() {
-                       $('#presenting').show();
+                   function worksShow() {
+                       $('#works').show();
                        setTimeout(function() {
-                           $('#presenting').css({ 'left': '0%', 'top': '0%' });
+                           $('#works').css({ 'left': '0%', 'top': '0%' });
                        }, 100)
                    };
-                   function presentingHide() {
-                      $('#presenting').css({ 'top': '-140%' });
+                   function worksHide() {
+                      $('#works').css({ 'top': '-140%' });
                       setTimeout(function() {
-                           $('#presenting').hide();
+                           $('#works').hide();
                       }, 800);
                       show1();
                   };
-                  function calendarpShow() {
-                      $('#calendarp').show();
+                  function texiaoShow() {
+                      $('#texiao').show();
                       setTimeout(function() {
-                          $('#calendarp').css({ 'left': '0%', 'top': '0%' });
+                          $('#texiao').css({ 'left': '0%', 'top': '0%' });
                       }, 100)
                     };
-                   function calendarpHide() {
-                       $('#calendarp').css({ 'top': '-140%' });
+                   function texiaoHide() {
+                       $('#texiao').css({ 'top': '-140%' });
                        setTimeout(function() {
-                           $('#calendarp').hide();
+                           $('#texiao').hide();
                        }, 800);
                        show1();
                    };

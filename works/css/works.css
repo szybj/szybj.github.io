@@ -1,4 +1,4 @@
-#presenting {
+#works {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -7,13 +7,13 @@
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
 
-#presenting .cloud {
+#works .cloud {
     width: 100%;
     position: absolute;
     height: 600px;
 }
 
-#presenting .cloud div {
+#works .cloud div {
     position: absolute;
 }
 
@@ -31,7 +31,7 @@
     background-position: -674px -501px;
 }
 
-#presenting .tabBtn {
+#works .tabBtn {
     width: 43px;
     height: 100%;
     border-radius: 5px;
@@ -41,7 +41,7 @@
     background-color: #275b7d;
 }
 
-#presenting .tabBtn .btn {
+#works .tabBtn .btn {
     width: 100%;
     height: 20px;
     position: absolute;
@@ -49,7 +49,7 @@
     left: 0px;
 }
 
-#presenting .tabBtn .btn a {
+#works .tabBtn .btn a {
     display: block;
     position: absolute;
     width: 20px;
@@ -57,30 +57,30 @@
     transition: all 1s ease-out;
 }
 
-#presenting .tabBtn .btn a:hover {
+#works .tabBtn .btn a:hover {
     background-color: #11A9CC;
 }
 
-#presenting .tabBtn .btn .prev,
-#presenting .tabBtn .btn .next {
+#works .tabBtn .btn .prev,
+#works .tabBtn .btn .next {
     background: url(../images/sprite-ui.png) center no-repeat;
 }
 
-#presenting .tabBtn .btn .prev {
+#works .tabBtn .btn .prev {
     top: 0px;
     left: 0px;
     background-color: #1C91C0;
     background-position: -330px -80px;
 }
 
-#presenting .tabBtn .btn .next {
+#works .tabBtn .btn .next {
     top: 0px;
     right: 0px;
     background-color: #1C91C0;
     background-position: -365px -80px;
 }
 
-#presenting .tabBtn .void {
+#works .tabBtn .void {
     width: 26px;
     height: 26px;
     position: absolute;
@@ -90,7 +90,7 @@
     left: 8px;
 }
 
-#presenting .tabBtn .botBtn {
+#works .tabBtn .botBtn {
     width: 100%;
     position: absolute;
     left: 0;
@@ -98,7 +98,7 @@
     height: 150px;
 }
 
-#presenting .tabBtn .top {
+#works .tabBtn .top {
     width: 100%;
     position: absolute;
     left: 0;
@@ -108,7 +108,7 @@
     background-position: -630px -456px;
 }
 
-#presenting .tabBtn .bottom {
+#works .tabBtn .bottom {
     width: 34px;
     height: 32px;
     position: absolute;
@@ -119,7 +119,7 @@
     border-radius: 5px;
 }
 
-#presenting .bottom .rodiu {
+#works .bottom .rodiu {
     position: absolute;
     bottom: 7px;
     left: 0px;
@@ -132,13 +132,13 @@
 
 /**********************/
 
-#presenting .tvItem {
+#works .tvItem {
     width: 100%;
     height: 100%;
     overflow: hidden;
 }
 
-#presenting .tvItem li {
+#works .tvItem li {
     position: absolute;
     top: 0;
     left: 0;
@@ -149,7 +149,7 @@
     transition: all 1s ease-out;
 }
 
-#presenting .tvItem li a {
+#works .tvItem li a {
     position: absolute;
     display: block;
     height: 260px;
@@ -157,7 +157,7 @@
     overflow: hidden;
 }
 
-#presenting .tvItem li a img {
+#works .tvItem li a img {
     border: none;
     display: block;
     height: 260px;

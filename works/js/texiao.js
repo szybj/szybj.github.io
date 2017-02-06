@@ -2,7 +2,7 @@
  * @Author: szybj
  * @Date:   2017-02-05 15:01:02
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-06 00:02:01
+ * @Last Modified time: 2017-02-06 20:45:20
  */
 
 'use strict';
@@ -20,7 +20,7 @@
         $li;
     var $a = $('.navList').find('a');
     var $list3d = $('.list3d'),
-        $tab = $('#calendarp').find('.tab'),
+        $tab = $('#texiao').find('.tab'),
         $btn_3d = $('.btn_3d');
 
     /*图片全部加载完成后，执行入场动画*/

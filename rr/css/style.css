@@ -1,0 +1,192 @@
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,pre,form,input,textarea,th,td,select,img{ margin:0; padding:0; border: none;}
+em{ font-style:normal}
+li{ list-style:none}
+a { color: #333; text-decoration: none;}
+a:hover { text-decoration: underline;}
+img{ border:none; vertical-align:top}
+
+ body { 
+ 	font-size: 14px; 
+ 	line-height: 120%; 
+ 	text-align: center; 
+ 	color:#333; 
+ 	padding: 20px;
+ }
+
+.clearFix:after { 
+	content:"."; 
+	display:block; 
+	height:0; 
+	clear:both; 
+	visibility:hidden
+}
+.clearFix{ *height:1%;}
+#list { 
+	margin: 0 auto; 
+	text-align:left; 
+	width: 540px;
+}
+.box { 
+	border-top: 1px solid #eee; 
+	position: relative;  
+	width: 540px; 
+	padding: 20px 0
+}
+.box:hover .close { 
+	display: block;
+}
+.close { 
+	display: none; 
+	top:0px; 
+	right: 0px; 
+	width: 28px; 
+	height: 28px;  
+	position: absolute; 
+	background: #f2f4f7; 
+	line-height: 28px; 
+	text-align: center;
+}
+.close:hover { 
+	background: #c8d2e2; 
+	text-decoration: none;
+}
+.head { 
+	float: left; 
+	width: 60px; 
+	height: 60px; 
+	margin-right: 10px; 
+	border-radius: 50%;
+}
+.content { 
+	float:left; 
+	width: 440px;
+}
+.main { 
+	margin-bottom: 10px;
+}
+.txt { 
+	margin-bottom: 10px;
+}
+.user { 
+	color: #369;
+	font-weight:bold;  
+	padding-right:10px;
+}
+.pic { 
+	margin-right: 10px; 
+	width: 200px; s
+}
+.info { 
+	height: 20px; 
+	line-height: 20px; 
+	font-size: 14px; 
+	margin-bottom:10px;
+}
+.info .time { 
+	color: #ccc; 
+	float: left; 
+	height: 20px; 
+	padding-left:28px; 
+	background: url("../images/bg1.jpg") no-repeat left top;
+}
+.info .praise { 
+	color: #369; 
+	float: right; 
+	height: 20px; 
+	padding-left: 18px; 
+	background: url("../images/bg2.jpg") no-repeat left top;
+}
+.info .praise:hover { 
+	text-decoration: underline; 
+	background: url("../images/bg3.jpg") no-repeat left top;
+}
+.praisesTotal { 
+	margin-bottom: 10px; 
+	height: 20px; 
+	background: url("../images/praise.png") no-repeat 5px 6px #DEFEFC; 
+	padding: 5px 0 5px 25px; 
+	line-height: 20px;
+}
+.commentBox { 
+	padding: 10px 0; 
+	border-top: 1px solid #eee;
+}
+.commentBox:hover { 
+	background: rgb(247, 247, 247);
+}
+.commentBox .myHead { 
+	float: left; 
+	width: 30px; 
+	height: 30px; 
+	margin-right: 10px;
+}
+.commentBox .commentContent { 
+	float: left; width: 400px; 
+}
+.commentBox .commentContent .commentTime { 
+	color: #ccc;
+	margin-top: 5px; 
+	line-height: 16px; 
+	position: relative;
+}
+.commentBox .commentContent .commentPraise { 
+	display: none; 
+	color: #369; 
+	padding-left: 17px; 
+	height: 20px; 
+	background: url("../images/praise.png") no-repeat;  
+	position: absolute; 
+	bottom: 0px; 
+	right: 44px;
+}
+.commentBox .commentContent .commentOperate { 
+	display: none; 
+	color: #369; 
+	height: 20px;  
+	position: absolute; 
+	bottom: 0px; 
+	right: 10px;
+}
+.commentBox .commentContent:hover .commentPraise { display: inline-block;}
+.commentBox .commentContent:hover .commentOperate { display: inline-block;}
+.textBox .comment { 
+	border: 1px solid #eee; 
+	display: block; 
+	height: 15px; 
+	width: 428px; 
+	padding: 5px; 
+	resize: none; 
+	color: #ccc
+}
+.textBox .btn { 
+	font-size: 12px; 
+	font-weight: bold; 
+	display: none; 
+	float: right; 
+	width: 65px; 
+	height: 25px; 
+	border: 1px solid #0C528D; 
+	color: #fff; 
+	background: #4679AC;
+}
+.textBox .btnOff { 
+	border: 1px solid #ccc;
+	 color: #ccc; 
+	 background: #F7F7F7;
+}
+.textBox .word{ 
+	display: none; 
+	float: right; 
+	margin: 7px 10px 0 0; 
+	color: #666;
+}
+.textBoxOn .comment{ 
+	height: 50px; 
+	color: #333;
+}
+.textBoxOn .btn{ 
+	display: inline;
+}
+.textBoxOn .word{ 
+	display: inline;
+}

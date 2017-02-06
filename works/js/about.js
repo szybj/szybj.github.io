@@ -2,7 +2,7 @@
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-06 13:56:51
+ * @Last Modified time: 2017-02-06 15:49:34
  */
 
 'use strict';
@@ -13,7 +13,7 @@
     var $f = $('.f'),
         $facesWrap = $('.facesWrap');
 
-   init();
+ init();
 
 timer = setInterval(function() {
         init();
@@ -28,23 +28,20 @@ timer = setInterval(function() {
     }
 
     function show() {
+        $facesWrap.css({'transform':'rotateX(0deg) rotateY(0deg)'})
         $($f[n]).children().css({ 'transform': 'scale(1) rotate(360deg)' });
         $f[n].style.opacity = 1;
         setTimeout(function() {
             $($f[n]).children().css({ 'transform': 'scale(0) rotate(0deg)' });
             $f[n].style.opacity = 0;
         }, 5000)
-
     }
-
     $facesWrap.on('mouseover',function(ev){
-        var iX = ev.clientX - (getX(this)+this.offsetWidth/2),
-            iY = ev.clientY - (getY(this)+this.offsetHeight/2);
-     /*   var iY = parseInt(ev.clientY - getY(this));*/
-        this.style.transform = 'rotateX('+iY*0.15+'deg) rotateY('+iX*0.15+'deg)'
-     document.title = iX;
+        var iX = (ev.clientX - (getX(this)+this.offsetWidth/2))*0.15,
+            iY = (ev.clientY - (getY(this)+this.offsetHeight/2))*0.15;
 
-
+        this.style.transform = 'rotateX('+iY+'deg) rotateY('+iX+'deg) translateZ(0px)';
+        this.style.perspectiveOrigin = '192px 222px';
 
     });
 

@@ -1,4 +1,4 @@
-#calendarp {
+#texiao {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -7,23 +7,23 @@
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
 
-#calendarp .cloud {
+#texiao .cloud {
     width: 100%;
     position: absolute;
     height: 600px;
 }
 
-#calendarp .cloud div {
+#texiao .cloud div {
     position: absolute;
 }
 
-#calendarp .list3d {
+#texiao .list3d {
     position: relative;
     width: 100%;
     height: 260px;
 }
 
-#calendarp .list3d li {
+#texiao .list3d li {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,13 +38,13 @@
     background-size: 100% 260px;
 }
 
-#calendarp .list3d li a {
+#texiao .list3d li a {
     display: block;
     width: 100%;
     height: 100%;
 }
 
-#calendarp .btn_3d {
+#texiao .btn_3d {
     width: 29px;
     height: 29px;
     background: rgba(0, 0, 0, 0.5);
@@ -57,20 +57,20 @@
     background: url(../images/icon.png) no-repeat;
 }
 
-#calendarp .prev_3d {
+#texiao .prev_3d {
     left: -10px;
     background-position: 0 0;
 }
 
-#calendarp .prev_3d:hover {
+#texiao .prev_3d:hover {
     background-position: -30px 0;
 }
 
-#calendarp .next_3d {
+#texiao .next_3d {
     right: -10px;
     background-position: -60px 0;
 }
 
-#calendarp .next_3d:hover {
+#texiao .next_3d:hover {
     background-position: -90px 0;
 }
