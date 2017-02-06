@@ -2,14 +2,14 @@
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-06 19:04:52
+ * @Last Modified time: 2017-02-06 22:41:53
  */
 
 'use strict';
 (function() {
     // 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main'));
 
+    var myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
     var option = {
 
@@ -89,6 +89,9 @@
     };
 
 
+
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+
+
 })();

@@ -2,7 +2,7 @@
  * @Author: szybj
  * @Date:   2017-02-05 15:01:02
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-06 20:45:20
+ * @Last Modified time: 2017-02-06 22:35:15
  */
 
 'use strict';
@@ -43,8 +43,8 @@
     });
 
     $a.on('click', function(ev) {
-        console.log(this)
-        if (this.dataset.hash == 'Calendarp') {
+
+        if (this.dataset.hash == 'texiao') {
             start();
         }
     })
