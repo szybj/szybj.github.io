@@ -2,14 +2,14 @@
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-05 12:24:22
+ * @Last Modified time: 2017-02-06 22:18:51
  */
 
 'use strict';
 (function() {
     var data = ['images/1.jpg', 'images/2.jpg', 'images/3.jpg', 'images/4.jpg'],
-        titleData = ['百度', '京东', 'css3平滑过渡', '个人站'],
-        linkDate = ['https://www.baidu.com', 'https://www.jd.com/', 'https://szybj.github.io/css3%E7%BD%91%E9%A1%B5%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C/index.html', 'https://szybj.github.io/works/index.html']
+        titleData = ['css3网页平滑过渡效果', '评论功能', '在线教育', 'jd'],
+        linkDate = ['https://szybj.github.io/css3%E7%BD%91%E9%A1%B5%E5%B9%B3%E6%BB%91%E8%BF%87%E6%B8%A1%E6%95%88%E6%9E%9C/index.html', 'https://szybj.github.io/rr/index.html', 'https://szybj.github.io/e-Learning/', 'https://szybj.github.io/jd/index.html']
     var str = '';
     var timer = null;
     var n = 0;
