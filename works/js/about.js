@@ -2,7 +2,7 @@
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-06 15:49:34
+ * @Last Modified time: 2017-02-08 21:48:35
  */
 
 'use strict';
@@ -37,11 +37,11 @@ timer = setInterval(function() {
         }, 5000)
     }
     $facesWrap.on('mouseover',function(ev){
-        var iX = (ev.clientX - (getX(this)+this.offsetWidth/2))*0.15,
-            iY = (ev.clientY - (getY(this)+this.offsetHeight/2))*0.15;
+        var iX = (ev.clientX - (getX(this)+this.offsetWidth/2))*0.1,
+            iY = (ev.clientY - (getY(this)+this.offsetHeight/2))*0.1;
 
-        this.style.transform = 'rotateX('+iY+'deg) rotateY('+iX+'deg) translateZ(0px)';
-        this.style.perspectiveOrigin = '192px 222px';
+        this.style.transform = 'rotateX('+iY+'deg) rotateY('+iX+'deg) translateZ(50px)';
+
 
     });
 
