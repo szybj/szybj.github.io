@@ -2,7 +2,7 @@
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
  * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-08 14:48:57
+ * @Last Modified time: 2017-02-08 15:10:59
  */
 
 'use strict';
@@ -13,7 +13,7 @@
     var str = '';
     var timer = null;
     var n = 0;
-
+    var flag = true;
     var $ul = $('.tvItem');
     var $next = $('.btn').find('.next');
     var $prev = $('.btn').find('.prev');
@@ -26,9 +26,11 @@
     var $li = $('.tvItem').find('li');
     init($li);
     $next.on('click', function() {
+
         next($li);
     });
     $prev.on('click', function() {
+
         prev($li);
     })
     timer = setInterval(function() {
@@ -39,36 +41,41 @@
         clearInterval(timer);
     });
     $ul.on('mouseleave', function() {
-
         timer = setInterval(function() {
             next($li);
         }, 6000);
     });
     for (var i = 0; i < $li.length; i++) {
         $li[i].onmouseover = function() {
-
             $(this).css({ 'transform': 'scale(1.2)' })
         }
         $li[i].onmouseout = function() {
-
             $(this).css({ 'transform': 'scale(1)' })
         }
     }
 
     function prev(obj) {
-        n++;
-        if (n > obj.length - 1) {
-            n = 0;
+        if(flag){
+            flag = false;
+            n--;
+        }
+        if (n < 0) {
+            n = obj.length - 1;
         }
         init(obj);
+
     }
 
     function next(obj) {
-        n++;
-        if (n > obj.length - 1) {
-            n = 0;
+        if(flag){
+            flag = false;
+            n++;
+
         }
-        init(obj);
+         if (n > obj.length - 1) {
+                n = 0;
+            }
+            init(obj);
     }
 
     function init(obj) {
@@ -78,6 +85,12 @@
         }
         obj[n].style.zIndex = 1;
         obj[n].style.opacity = 1;
+        obj[n].addEventListener('transitionend', flagFn);
+        function flagFn(){
+            flag = true;
+            obj[n].removeEventListener('transitionend', flagFn);
+        }
+
     }
 
 })();
