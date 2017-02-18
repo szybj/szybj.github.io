@@ -2,7 +2,7 @@
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
  * @Last Modified by:   szy
- * @Last Modified time: 2017-02-16 19:04:43
+ * @Last Modified time: 2017-02-18 20:07:03
  */
 
 'use strict';
@@ -35,7 +35,7 @@
     })
     timer = setInterval(function() {
         next($li);
-    }, 6000);
+    }, 2000);
     $ul.on('mouseenter', function() {
 
         clearInterval(timer);
@@ -43,7 +43,7 @@
     $ul.on('mouseleave', function() {
         timer = setInterval(function() {
             next($li);
-        }, 6000);
+        }, 2000);
     });
     for (var i = 0; i < $li.length; i++) {
         $li[i].onmouseover = function() {

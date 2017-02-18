@@ -1,8 +1,8 @@
 /*
 * @Author: szy
 * @Date:   2016-12-26 23:39:25
-* @Last Modified by:   szybj
-* @Last Modified time: 2017-02-08 21:30:54
+* @Last Modified by:   szy
+* @Last Modified time: 2017-02-18 19:08:45
 */
 
 body,
@@ -226,22 +226,38 @@ a {
 }
 
 #title {
-    left: 50%;
-    margin-left: -150px;
-    height: 85px;
-    color: #fff;
+    width:100%;
     text-align: center;
-    width: 300px;
     top: 120px;
     position: relative;
     z-index: 10;
 }
 
-#title h1 {
-    font-size: 40px;
+#title .name{
+    color:#fff;
+    text-shadow: 1px 2px #183C55, 2px 4px #aee2d9;
+    font-size: 30px;
+    line-height: 50px;
     height: 50px;
 }
+#title .email{
+    text-align:center;
 
+    margin:5px 0;
+
+
+}
+#title .email a{
+    display:inline-block;
+    text-align:center;
+    liine-height:18px;
+    font-size:16px;
+    color:#fff;
+    transition:0.6s;
+}
+#title .email a:hover{
+    color:#4DBFD9;
+}
 #title h2 {
     font-size: 18px;
     padding-topa: 10px;

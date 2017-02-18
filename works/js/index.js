@@ -1,8 +1,8 @@
    /*
     * @Author: szy
     * @Date:   2016-12-29 01:51:31
-    * @Last Modified by:   szybj
-    * @Last Modified time: 2017-02-06 20:48:26
+    * @Last Modified by:   szy
+    * @Last Modified time: 2017-02-18 22:14:18
     *
     */
    'use strict';
@@ -246,7 +246,15 @@
                },
                /*链接移入移出*/
                linkInOut: function() {
-                   var $link = $('.link');
+                   var $link = $('.link'),
+                       $menuHome = $('.menuHome');
+                      $.each($link,function(i, item) {
+                        $(item).on('click',function(){
+                          if ($menuHome.position().left!=0) {
+                            $menuHome.css('left',0)
+                          }
+                        })
+                      })
                    $link.on('mouseover', function() {
                        $(this).css('backgroundPositionX', -187);
                        $(this).prev().css({
@@ -262,6 +270,8 @@
                            "transform": "translate(60px,-178px)"
                        });
                    });
+
+
                },
                //点击抖动掉落
                clickFn: function() {
