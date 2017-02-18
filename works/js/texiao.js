@@ -1,14 +1,14 @@
 /*
  * @Author: szybj
  * @Date:   2017-02-05 15:01:02
- * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-06 22:35:15
+ * @Last Modified by:   szy
+ * @Last Modified time: 2017-02-18 22:34:53
  */
 
 'use strict';
 (function() {
     var data = {
-        images: ['images/62930.jpg', 'images/68052.jpg', 'images/68071.jpg', 'images/68198.jpg', 'images/68582.jpg'],
+        images: ['works/images/62930.jpg', 'works/images/68052.jpg', 'works/images/68071.jpg', 'works/images/68198.jpg', 'works/images/68582.jpg'],
         link: ['http://y.qq.com/vip/nine_anniversary/index.html', 'https://y.qq.com/portal/mv/c/g3nr24jdgv07dkn.html', 'http://y.qq.com/topic/yt165/index.html', 'https://y.qq.com/portal/album/00490g2Q44YI6x.html#', 'https://y.qq.com/portal/album/004Ldkvp2qw8os.html#'],
         title: ['绿钻豪华版', 'MV精选', '乐谈', '音乐综艺', '独家首发']
     }
@@ -21,6 +21,7 @@
     var $a = $('.navList').find('a');
     var $list3d = $('.list3d'),
         $tab = $('#texiao').find('.tab'),
+        $link = $('.link').find('a'),
         $btn_3d = $('.btn_3d');
 
     /*图片全部加载完成后，执行入场动画*/
@@ -43,6 +44,12 @@
     });
 
     $a.on('click', function(ev) {
+
+        if (this.dataset.hash == 'texiao') {
+            start();
+        }
+    });
+    $link.on('click', function(ev) {
 
         if (this.dataset.hash == 'texiao') {
             start();
