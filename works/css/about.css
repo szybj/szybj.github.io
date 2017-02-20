@@ -460,7 +460,17 @@
     background: url(../images/sprite-face-presenter.png) no-repeat;
     background-position: -338px -415px;
 }
-
+.down{
+	margin: 10px 0;
+}
+.down a{text-decoration: none;
+    color: #9f3;
+    font-size: 20px;
+    font-weight: 700;
+	transition: 0.5s;}
+.down a:hover{
+	color: #008a75;
+}
 .right .tab {
     position: relative;
     max-width: 520px;
