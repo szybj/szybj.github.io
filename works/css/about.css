@@ -6,7 +6,17 @@
     top: -140%;
     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.1);
 }
-
+#about .down{
+	margin: 10px 0;
+}
+#about .down a{text-decoration: none;
+    color: #9f3;
+    font-size: 20px;
+    font-weight: 700;
+	transition: 0.5s;}
+#about .down a:hover{
+	color: #008a75;
+}
 .moun {
     position: absolute;
     width: 120%;
@@ -460,17 +470,7 @@
     background: url(../images/sprite-face-presenter.png) no-repeat;
     background-position: -338px -415px;
 }
-.down{
-	margin: 10px 0;
-}
-.down a{text-decoration: none;
-    color: #9f3;
-    font-size: 20px;
-    font-weight: 700;
-	transition: 0.5s;}
-.down a:hover{
-	color: #008a75;
-}
+
 .right .tab {
     position: relative;
     max-width: 520px;
