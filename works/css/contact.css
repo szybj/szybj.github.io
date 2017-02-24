@@ -17,8 +17,14 @@
     height:60%;
 }
 @keyframes finish {
-
     transform:rotate(360deg);
+}
+@-webkit-keyframes finish {
+    -webkit-transform:rotate(360deg);
+}
+
+@-moz-keyframes finish {
+    -moz-transform:rotate(360deg);
 }
 #contact .fishing{
     width:100%;
@@ -44,11 +50,14 @@
     width:112px;
     height:74px;
     transform-origin:center 300%;
+    -webkit-transform-origin:center 300%;
+    -moz-transform-origin:center 300%;
     left:20%;
     animation:fishing 10s infinite ease-out;
+    -webkit-animation:fishing 10s infinite ease-out;
+    -moz-animation:fishing 10s infinite ease-out;
     background:url(../images/sprite-primary.png) no-repeat;
     background-position:-376px -157px;
-
 }
 #contact .fishing .fishing2{
     position:absolute;
@@ -73,6 +82,32 @@
     }
 
 }
+@-webkit-keyframes fishing{
+    0%{
+        -webkit-transform:rotate(-180deg)
+    }
+    50%{
+        -webkit-transform:rotate(180deg)
+    }
+    100%{
+
+        -webkit-transform:rotate(180deg)
+    }
+
+}
+@-moz-keyframes fishing{
+    0%{
+        -moz-transform:rotate(-180deg)
+    }
+    50%{
+        -moz-transform:rotate(180deg)
+    }
+    100%{
+
+        -moz-transform:rotate(180deg)
+    }
+
+}
 #contact .emailOuter{
     position: relative;
     z-index: 1;
@@ -92,7 +127,6 @@
     width:52px;
     height:40px;
     left:-26px;
-
     overflow:hidden;
 }
 #contact .pin-pos .sanjiao{
@@ -118,7 +152,9 @@
     background:url(../images/sprite-primary.png) no-repeat;
     background-position:-489px -222px;
     height:14px;
-     animation:opacity 6s infinite;
+    animation:opacity 6s infinite;
+    -webkit-animation:opacity 6s infinite;
+    -moz-animation:opacity 6s infinite;
 }
 #contact .ping .pingziWrap{
     position: absolute;
@@ -140,8 +176,6 @@
     left:20px;
     width:38px;
     height:117px;
-
-
 }
 #contact .ping .pingBottom{
     position: absolute;
@@ -152,8 +186,32 @@
     background-position:-489px -234px;
     height:12px;
     animation:opacity 6s infinite;
+    -webkit-animation:opacity 6s infinite;
+    -moz-animation:opacity 6s infinite;
 }
 @keyframes opacity {
+    0%{
+        opacity:0.5;
+    }
+    50%{
+         opacity:1;
+    }
+    100%{
+         opacity:0.5;
+    }
+}
+@-webkit-keyframes opacity {
+    0%{
+        opacity:0.5;
+    }
+    50%{
+         opacity:1;
+    }
+    100%{
+         opacity:0.5;
+    }
+}
+@-moz-keyframes opacity {
     0%{
         opacity:0.5;
     }
@@ -169,7 +227,6 @@
     padding: 30px 20px;
     background-color: rgba(242,242,242,0.4);
     margin: 0 20px;
-
     position: relative;
 }
 
@@ -253,7 +310,7 @@
     width: 98%;
     padding: 6px 5px 5px;
     color: #1A1A1A;
-     font-size: 14px;
+    font-size: 14px;
 }
 #contact .emailRight .submitBtn{
     text-align:right;
@@ -305,8 +362,32 @@
     height:67px;
     background-position:0 -139px;
     animation: wash 4s infinite ease-out;
+    -webkit-animation: wash 4s infinite ease-out;
+    -moz-animation: wash 4s infinite ease-out;
 }
 @-webkit-keyframes wash{
+    0%{
+        -webkit-transform: translateY(0px);
+    }
+    50%{
+        -webkit-transform: translateY(-42px);
+    }
+    100%{
+        -webkit-transform: translateY(0px)
+    }
+}
+@-moz-keyframes wash{
+    0%{
+        -moz-transform: translateY(0px);
+    }
+    50%{
+        -moz-transform: translateY(-42px);
+    }
+    100%{
+        -moz-transform: translateY(0px)
+    }
+}
+@keyframes wash{
     0%{
         transform: translateY(0px);
     }
@@ -326,6 +407,8 @@
     background:url(../images/sprite-repeatx.png);
     background-position:0 -207px;
     animation: washBack 4s infinite ease-out;
+    -webkit-animation: washBack 4s infinite ease-out;
+    -moz-animation: washBack 4s infinite ease-out;
 }
 #contact .shore .terra{
     position: absolute;
@@ -339,120 +422,127 @@
 }
 #contact .terra .crab0{
     animation:sheel0 40s infinite ease-out;
+    -webkit-animation:sheel0 40s infinite ease-out;
+    -moz-animation:sheel0 40s infinite ease-out;
 
 }
 #contact .terra .crab1{
-    animation:sheel1 30s infinite ease-out;
+    animation:sheel0 40s 10s infinite ease-out;
+    -webkit-animation:sheel0 40s 10s infinite ease-out;
+    -moz-animation:sheel0 40s 10s infinite ease-out;
 }
 #contact .terra .crab2{
-    animation:sheel2 40s infinite ease-out;
+    animation:sheel0 40s 15s infinite ease-out;
+    -webkit-animation:sheel0 40s 15s infinite ease-out;
+    -moz-animation:sheel0 40s 15s infinite ease-out;
 }
 
 @keyframes sheel0 {
-0%{
-   left:0%;
+    0% {
+        left: 0%;
+    }
+    10% {
+        left: 20%;
+    }
+    20% {
+        left: 20%;
+    }
+    30% {
+        left: 50%;
+    }
+    40% {
+        left: 50%;
+    }
+    50% {
+        left: 80%;
+    }
+    60% {
+        left: 80%;
+    }
+    70% {
+        left: 50%;
+    }
+    80% {
+        left: 50%;
+    }
+    90% {
+        left: 0%;
+    }
+    100% {
+        left: 0%;
+    }
 }
-10%{
-   left:20%;
+@-webkit-keyframes sheel0 {
+    0% {
+        left: 0%;
+    }
+    10% {
+        left: 20%;
+    }
+    20% {
+        left: 20%;
+    }
+    30% {
+        left: 50%;
+    }
+    40% {
+        left: 50%;
+    }
+    50% {
+        left: 80%;
+    }
+    60% {
+        left: 80%;
+    }
+    70% {
+        left: 50%;
+    }
+    80% {
+        left: 50%;
+    }
+    90% {
+        left: 0%;
+    }
+    100% {
+        left: 0%;
+    }
 }
-20%{
-   left:20%;
+@-moz-keyframes sheel0 {
+    0% {
+        left: 0%;
+    }
+    10% {
+        left: 20%;
+    }
+    20% {
+        left: 20%;
+    }
+    30% {
+        left: 50%;
+    }
+    40% {
+        left: 50%;
+    }
+    50% {
+        left: 80%;
+    }
+    60% {
+        left: 80%;
+    }
+    70% {
+        left: 50%;
+    }
+    80% {
+        left: 50%;
+    }
+    90% {
+        left: 0%;
+    }
+    100% {
+        left: 0%;
+    }
 }
-30%{
-   left:50%;
-}
-40%{
-   left:50%;
-}
-50%{
-   left:80%;
-}
-60%{
-   left:80%;
-}
-70%{
-   left:50%;
-}
-80%{
-   left:50%;
-}
-90%{
-   left:0%;
-}
-100%{
-   left:0%;
-}
-}
-@keyframes sheel1 {
-0%{
-   left:60%;
-}
-10%{
-   left:60%;
-}
-20%{
-   left:90%;
-}
-30%{
-   left:20%;
-}
-40%{
-   left:30%;
-}
-50%{
-   left:60%;
-}
-60%{
-   left:60%;
-}
-70%{
-   left:90%;
-}
-80%{
-   left:90%;
-}
-90%{
-   left:40%;
-}
-100%{
-   left:40%;
-}
-}
-@keyframes sheel2 {
-0%{
-   left:20%;
-}
-10%{
-   left:20%;
-}
-20%{
-   left:50%;
-}
-30%{
-   left:50%;
-}
-40%{
-   left:70%;
-}
-50%{
-   left:70%;
-}
-60%{
-   left:40%;
-}
-70%{
-   left:40%;
-}
-80%{
-   left:20%;
-}
-90%{
-   left:20%;
-}
-100%{
-   left:20%;
-}
-}
+
 #contact .crab .shell{
     position: absolute;
     width:49px;
@@ -496,7 +586,53 @@
         top:-6px
     }
 }
+@-webkit-keyframes leg1 {
+    0%{
+        top:-6px
+    }
+    50%{
+        top:-4px
+    }
+    100%{
+        top:-6px
+    }
+}
+@-moz-keyframes leg1 {
+    0%{
+        top:-6px
+    }
+    50%{
+        top:-4px
+    }
+    100%{
+        top:-6px
+    }
+}
 @keyframes leg2 {
+    0%{
+        top:-6px
+    }
+    50%{
+        top:-5px
+    }
+    100%{
+        top:-6px
+    }
+
+}
+@-webkit-keyframes leg2 {
+    0%{
+        top:-6px
+    }
+    50%{
+        top:-5px
+    }
+    100%{
+        top:-6px
+    }
+
+}
+@-moz-keyframes leg2 {
     0%{
         top:-6px
     }
@@ -515,6 +651,8 @@
     width:21px;
     height:18px;
     animation:leg1 0.6s infinite ease-out;
+    -webkit-animation:leg1 0.6s infinite ease-out;
+    -moz-animation:leg1 0.6s infinite ease-out;
     background:url(../images/sprite-primary.png) no-repeat;
     background-position:-489px -177px;
 }
@@ -525,6 +663,8 @@
     width:21px;
     height:18px;
     animation:leg2 0.6s infinite ease-out;
+    -webkit-animation:leg2 0.6s infinite ease-out;
+    -moz-animation:leg2 0.6s infinite ease-out;
     background:url(../images/sprite-primary.png) no-repeat;
     background-position:-489px -177px;
 }
@@ -535,6 +675,8 @@
     width:21px;
     height:18px;
     animation:leg1 0.6s infinite ease-out;
+    -webkit-animation:leg1 0.6s infinite ease-out;
+    -moz-animation:leg1 0.6s infinite ease-out;
     background:url(../images/sprite-primary.png) no-repeat;
     background-position:-511px -177px;
 }
@@ -545,6 +687,8 @@
     width:21px;
     height:18px;
     animation:leg2 0.6s infinite ease-out;
+    -webkit-animation:leg2 0.6s infinite ease-out;
+    -moz-animation:leg2 0.6s infinite ease-out;
     background:url(../images/sprite-primary.png) no-repeat;
     background-position:-511px -177px;
 }
@@ -553,14 +697,14 @@
     top:20px;
 }
 #contact .terra .crab1{
-    left:200px;
+    left:100px;
     top:30px;
 }
 #contact .terra .crab2{
-    left:300px;
+    left:100px;
     top:40px;
 }
-@-webkit-keyframes washBack{
+@keyframes washBack{
     0%{
         transform: translateY(-20px);
     }
@@ -571,11 +715,32 @@
         transform: translateY(-20px)
     }
 }
+@-webkit-keyframes washBack{
+    0%{
+        -webkit-transform: translateY(-20px);
+    }
+    50%{
+        -webkit-transform: translateY(-50px);
+    }
+    100%{
+        -webkit-transform: translateY(-20px)
+    }
+}
+@-moz-keyframes washBack{
+    0%{
+        -moz-transform: translateY(-20px);
+    }
+    50%{
+        -moz-transform: translateY(-50px);
+    }
+    100%{
+        -moz-transform: translateY(-20px)
+    }
+}
 @media screen and (max-width:700px){
     #contact .emailWrap .emailLeft,#contact .emailWrap .emailRight{
         width:100%;
     }
-
     #contact .bottom{
         height:80%;
         transform:translateY(200px);
