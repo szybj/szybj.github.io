@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../leju/src/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="../leju/src/animate.min.css">
+    <link rel="stylesheet" href="../leju/style/style.css">
+    <script type="text/javascript" src="../leju/src/common.js"></script>
+    <script type="text/javascript" src="../leju/src/swiper.animate1.0.2.min.js"></script>
+
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide stop">
+                <div class="title ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s"></div>
+                <div class="q1 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s"></div>
+                <div class="cx ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1.2s" swiper-animate-delay="1s"></div>
+                <div class="bing ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.2s" swiper-animate-delay="1s"></div>
+                <div class="contrast-wrap clearfix ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1s">
+                    <div class="logo"></div>
+                    <div class="contrast-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+                        <p>总收入(美元)</p>
+                        <strong>1.13</strong><i>亿</i>
+                    </div>
+                    <div class="contrast-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+                         <p>收入同比增长</p>
+                        <strong>20.9</strong><i>%</i>
+                    </div>
+                </div>
+                <div class="arrow"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="title-91 ani" swiper-animate-effect="rubberBand" swiper-animate-duration="1s"></div>
+                <div class="text-wrap ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="0.3s">
+                    <p>91乐居总会员超<strong>8.7</strong><i>万</i>环比增长<strong>47</strong><i>%</i></p>
+                    <p>合作项目数<strong>4036</strong></p>
+                </div>
+                    <div class="building ani" swiper-animate-effect="fadeInDownBig" swiper-animate-duration="1s" swiper-animate-delay="1.8s"></div>
+                    <div class="distance ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="1.4s"></div>
+                    <div class="base ani" swiper-animate-effect="fadeInUpBig" swiper-animate-duration="1.2s"></div>
+               
+                <div class="arrow"></div>
+            </div>
+            <div class="swiper-slide">
+                <div class="foreman ani" swiper-animate-effect="wobble" swiper-animate-duration="1s"></div>
+                <div class="content-wrap ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s">
+                    <p>中国领先互联网装修服务平台，直接连接业主与工长，为消费者提供装修服务，为工长提供创业平台。</p>
+                </div>
+                <div class="data ani"  swiper-animate-effect="bounceInRight" swiper-animate-duration="1s">
+                    <div class="city">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="content"><strong>60<i>+</i></strong>万</div>
+                        <span>覆盖城市</span>
+                    </div>
+                    <div class="service">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="content"><strong>6.5<i>+</i></strong>万</div>
+                        <span>服务网友</span>
+                    </div>
+                    <div class="customer">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="content"><strong>13<i>+</i></strong>万</div>
+                        <span>客户咨询总数</span>
+                    </div>
+                    <div class="recruiting">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="content"><strong>2.7<i>+</i></strong>万</div>
+                        <span>招募合格工长</span>
+                    </div>
+                </div>
+                <div class="bottom-wrap">工匠精神<b></b>安心保障</div>
+                <!--<div class="arrow"></div>-->
+            </div>
+        </div>
+    </div>
+    <script src="../leju/src/swiper-3.4.2.min.js"></script>
+    <script>
+        var mySwiper = new Swiper(".swiper-container",{
+
+            onInit:function(swiper){
+                swiperAnimateCache(swiper);
+                swiperAnimate(swiper);
+            },
+            onSlideChangeEnd:function(swiper){
+                swiperAnimate(swiper)
+            },
+            direction:'vertical',
+            width:window.innerWidth,
+            height:window.innerHeight
+        })
+    </script>
+</body>
+</html>
