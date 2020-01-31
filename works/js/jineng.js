@@ -1,8 +1,8 @@
 /*
  * @Author: szybj
  * @Date:   2017-02-04 13:38:32
- * @Last Modified by:   szybj
- * @Last Modified time: 2017-02-06 22:41:53
+ * @Last Modified by: songzhiyin
+ * @Last Modified time: 2020-02-01 00:58:00
  */
 
 'use strict';
@@ -34,7 +34,7 @@
             textStyle:{
                 color:'#fff'
             },
-            data: ['HTML/CSS', 'JavaScript', 'Ajax','React','Vue', 'Java','C']
+            data: ['HTML5/CSS3', 'JavaScript', 'ES6','React','Vue.js', 'Webpack', '其他']
           /*
           //单独设置样式
           data: [{
@@ -50,16 +50,16 @@
         series: [{
             name: '专业技能',
             type: 'pie',
-            radius: '55%',
-            center: ['52%', '50%'],
+            radius: '45%',
+            center: ['55%', '50%'],
             data: [
-                { value: 835, name: 'HTML/CSS' },
+                { value: 835, name: 'HTML5/CSS3' },
                 { value: 1010, name: 'JavaScript' },
-                { value: 234, name: 'Ajax' },
+                { value: 234, name: 'ES6' },
                 { value: 135, name: 'React' },
-                { value: 300, name: 'Vue' },
-                { value: 235, name: 'Java' },
-                { value: 135, name: 'C' },
+                { value: 300, name: 'Vue.js' },
+                { value: 235, name: 'Webpack' },
+                { value: 135, name: '其他' },
 
             ],
             itemStyle: {
